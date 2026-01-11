@@ -19,6 +19,27 @@ header {
   padding: 30px 20px;
   background: black;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  position: relative;
+}
+
+.lang-switcher {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.lang-switcher button {
+  background: #0b5ed7;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin-left: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.lang-switcher button:hover {
+  background: #0a4fb5;
 }
 
 header img {
@@ -130,49 +151,53 @@ footer {
 <body>
 
 <header>
+  <div class="lang-switcher">
+    <button onclick="changeLanguage('ro')">RO</button>
+    <button onclick="changeLanguage('en')">EN</button>
+  </div>
   <img src="logo.png" alt="SkyClean Logo">
 </header>
 
 <div class="hero">
-  <h1>Curățenie profesională la tine acasă</h1>
-  <p>Canapele • Saltele • Covoare • Mochete</p>
-  <a href="tel:0773956147">📞 Sună acum: 0773 956 147</a>
+  <h1 data-translate="hero-title">Curățenie profesională la tine acasă</h1>
+  <p data-translate="hero-subtitle">Canapele • Saltele • Covoare • Mochete</p>
+  <a href="tel:0773956147" data-translate="hero-call">📞 Sună acum: 0773 956 147</a>
 </div>
 
 <section>
-  <h2>Serviciile noastre</h2>
+  <h2 data-translate="services-title">Serviciile noastre</h2>
 
   <div class="services">
 
     <div class="card">
       <img src="canapea.jpg">
       <div>
-        <h3>Curățare canapele</h3>
-        <p>Eliminăm petele, murdăria și mirosurile neplăcute.</p>
+        <h3 data-translate="service1-title">Curățare canapele</h3>
+        <p data-translate="service1-desc">Eliminăm petele, murdăria și mirosurile neplăcute.</p>
       </div>
     </div>
 
     <div class="card">
       <img src="saltea.jpg">
       <div>
-        <h3>Curățare saltele</h3>
-        <p>Curățare profundă pentru un somn sănătos.</p>
+        <h3 data-translate="service2-title">Curățare saltele</h3>
+        <p data-translate="service2-desc">Curățare profundă pentru un somn sănătos.</p>
       </div>
     </div>
 
     <div class="card">
       <img src="covor.jpg">
       <div>
-        <h3>Curățare covoare</h3>
-        <p>Reîmprospătăm culorile și textura.</p>
+        <h3 data-translate="service3-title">Curățare covoare</h3>
+        <p data-translate="service3-desc">Reîmprospătăm culorile și textura.</p>
       </div>
     </div>
 
     <div class="card">
       <img src="mocheta.jpg">
       <div>
-        <h3>Curățare mochete</h3>
-        <p>Soluții eficiente pentru birouri și spații comerciale.</p>
+        <h3 data-translate="service4-title">Curățare mochete</h3>
+        <p data-translate="service4-desc">Soluții eficiente pentru birouri și spații comerciale.</p>
       </div>
     </div>
 
@@ -181,10 +206,58 @@ footer {
 
 <footer>
   <p>📞 0773 956 147</p>
-  <p>© SkyClean – Curățenie la nivel înalt</p>
+  <p data-translate="footer-copyright">© SkyClean – Curățenie la nivel înalt</p>
 </footer>
 
-<a class="call" href="tel:0773956147">Sună acum</a>
+<a class="call" href="tel:0773956147" data-translate="fab-call">Sună acum</a>
+
+<script>
+const translations = {
+  'ro': {
+    'page-title': 'SkyClean – Curățenie la nivel înalt',
+    'hero-title': 'Curățenie profesională la tine acasă',
+    'hero-subtitle': 'Canapele • Saltele • Covoare • Mochete',
+    'hero-call': '📞 Sună acum: 0773 956 147',
+    'services-title': 'Serviciile noastre',
+    'service1-title': 'Curățare canapele',
+    'service1-desc': 'Eliminăm petele, murdăria și mirosurile neplăcute.',
+    'service2-title': 'Curățare saltele',
+    'service2-desc': 'Curățare profundă pentru un somn sănătos.',
+    'service3-title': 'Curățare covoare',
+    'service3-desc': 'Reîmprospătăm culorile și textura.',
+    'service4-title': 'Curățare mochete',
+    'service4-desc': 'Soluții eficiente pentru birouri și spații comerciale.',
+    'footer-copyright': '© SkyClean – Curățenie la nivel înalt',
+    'fab-call': 'Sună acum'
+  },
+  'en': {
+    'page-title': 'SkyClean – High-level cleaning',
+    'hero-title': 'Professional cleaning at your home',
+    'hero-subtitle': 'Sofas • Mattresses • Carpets • Rugs',
+    'hero-call': '📞 Call now: 0773 956 147',
+    'services-title': 'Our Services',
+    'service1-title': 'Sofa Cleaning',
+    'service1-desc': 'We remove stains, dirt, and unpleasant odors.',
+    'service2-title': 'Mattress Cleaning',
+    'service2-desc': 'Deep cleaning for a healthy sleep.',
+    'service3-title': 'Carpet Cleaning',
+    'service3-desc': 'We refresh the colors and texture.',
+    'service4-title': 'Rug Cleaning',
+    'service4-desc': 'Efficient solutions for offices and commercial spaces.',
+    'footer-copyright': '© SkyClean – High-level cleaning',
+    'fab-call': 'Call Now'
+  }
+};
+
+function changeLanguage(lang) {
+  document.documentElement.lang = lang;
+  document.title = translations[lang]['page-title'];
+  document.querySelectorAll('[data-translate]').forEach(el => {
+    const key = el.getAttribute('data-translate');
+    el.textContent = translations[lang][key];
+  });
+}
+</script>
 
 </body>
 </html>
