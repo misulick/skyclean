@@ -173,13 +173,15 @@ footer {
 
 .modal-content {
   background-color: #0b3c5d;
-  margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
   max-width: 600px;
   border-radius: 10px;
-  position: relative;
+  position: fixed; /* Changed from relative to fixed for centering */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .close-button {
