@@ -6,10 +6,6 @@
 <title>SkyClean – Curățenie la nivel înalt</title>
 
 <style>
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
@@ -19,137 +15,63 @@ body {
 
 /* HEADER */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
+  text-align: center;
+  padding: 30px 20px;
   background: black;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  position: fixed;
-  top: 0;
-  width: calc(100% - 60px);
-  z-index: 1000;
-}
-
-header .logo-container {
-  flex-shrink: 0;
-}
-
-header img {
-  max-width: 200px; /* Smaller logo */
-  width: 100%;
+  position: relative;
 }
 
 .lang-switcher {
-  display: flex;
-  align-items: center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
 .lang-switcher button {
-  background: none;
+  background: none; /* Remove background color */
   border: none;
-  padding: 0;
+  padding: 0; /* Remove padding */
   margin-left: 5px;
   border-radius: 5px;
   cursor: pointer;
-  width: 30px;
-  height: 20px;
-  overflow: hidden;
-  vertical-align: middle;
+  width: 30px; /* Fixed width for button */
+  height: 20px; /* Fixed height for button */
+  overflow: hidden; /* Hide overflow if image is larger */
+  vertical-align: middle; /* Align vertically with other elements */
 }
 
 .lang-switcher button img {
   width: 100%;
   height: 100%;
-  display: block;
-  object-fit: cover;
-  border-radius: 5px;
+  display: block; /* Remove extra space below image */
+  object-fit: cover; /* Cover the button area */
+  border-radius: 5px; /* Apply border-radius to the image as well */
 }
 
 .lang-switcher button:hover {
-  opacity: 0.8;
+  opacity: 0.8; /* Simple hover effect */
 }
 
-
-/* NAVIGATION */
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-nav li {
-  margin-left: 20px;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  transition: background 0.3s;
-}
-
-nav a:hover {
-  background: #0b5ed7;
-}
-
-.burger-menu {
-  display: none;
-  cursor: pointer;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 30px;
-  height: 25px;
-}
-
-.burger-menu div {
+header img {
+  max-width: 420px;
   width: 100%;
-  height: 3px;
-  background-color: white;
-  border-radius: 2px;
 }
-
 
 /* HERO */
 .hero {
-  padding-top: 200px; /* Adjust for fixed header */
-  padding-bottom: 100px;
   text-align: center;
-  background-image: url('canapea2.jpg');
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
-.hero::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
+  padding: 50px 20px;
 }
 
 .hero h1 {
-  font-size: 48px;
+  font-size: 32px;
   margin-bottom: 10px;
   color: #7CFFB2;
 }
 
 .hero p {
-  font-size: 22px;
+  font-size: 18px;
   opacity: 0.9;
 }
 
@@ -168,15 +90,14 @@ nav a:hover {
 
 /* SECTIONS */
 section {
-  padding: 80px 20px;
+  padding: 60px 20px;
   max-width: 1200px;
   margin: auto;
 }
 
 h2 {
   text-align: center;
-  font-size: 36px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   color: #7CFFB2;
 }
 
@@ -212,16 +133,6 @@ h2 {
 .card h3 {
   margin-top: 0;
   color: #00ffcc;
-  font-size: 22px;
-}
-
-/* CONTACT */
-#contact {
-  text-align: center;
-}
-
-#contact p {
-    font-size: 18px;
 }
 
 /* FOOTER */
@@ -244,87 +155,27 @@ footer {
   text-decoration: none;
   font-weight: bold;
   box-shadow: 0 6px 20px rgba(0,255,200,0.7);
-  z-index: 100;
 }
-
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  header {
-    padding: 15px;
-    width: calc(100% - 30px);
-  }
-
-  nav {
-    display: none;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background: black;
-  }
-
-  nav.active {
-    display: block;
-  }
-  
-  nav ul {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  nav li {
-    margin: 0;
-    text-align: center;
-  }
-
-  nav a {
-    display: block;
-    padding: 15px;
-    border-bottom: 1px solid #0b3c5d;
-  }
-
-  .burger-menu {
-    display: flex;
-  }
-}
-
 </style>
 </head>
 
 <body>
 
 <header>
-  <a href="#hero" class="logo-container">
-    <img src="logo.png" alt="SkyClean Logo">
-  </a>
-  <nav>
-    <ul>
-      <li><a href="#hero" data-translate="nav-home">Acasă</a></li>
-      <li><a href="#services" data-translate="nav-services">Servicii</a></li>
-      <li><a href="#contact" data-translate="nav-contact">Contact</a></li>
-    </ul>
-  </nav>
   <div class="lang-switcher">
     <button onclick="changeLanguage('ro')"><img src="https://www.countryflags.com/wp-content/uploads/romania-flag-png-large.png" alt="Romanian Flag"></button>
     <button onclick="changeLanguage('en')"><img src="https://www.countryflags.com/wp-content/uploads/united-kingdom-flag-png-large.png" alt="UK Flag"></button>
   </div>
-  <div class="burger-menu">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
+  <img src="logo.png" alt="SkyClean Logo">
 </header>
 
-<div id="hero" class="hero">
-  <div class="hero-content">
-    <h1 data-translate="hero-title">Curățenie profesională la tine acasă</h1>
-    <p data-translate="hero-subtitle">Canapele • Saltele • Covoare • Mochete</p>
-    <a href="tel:0773956147" data-translate="hero-call">📞 Sună acum: 0773 956 147</a>
-  </div>
+<div class="hero">
+  <h1 data-translate="hero-title">Curățenie profesională la tine acasă</h1>
+  <p data-translate="hero-subtitle">Canapele • Saltele • Covoare • Mochete</p>
+  <a href="tel:0773956147" data-translate="hero-call">📞 Sună acum: 0773 956 147</a>
 </div>
 
-<section id="services">
+<section>
   <h2 data-translate="services-title">Serviciile noastre</h2>
 
   <div class="services">
@@ -364,40 +215,17 @@ footer {
   </div>
 </section>
 
-<section id="contact">
-    <h2 data-translate="contact-title">Contactează-ne</h2>
-    <p data-translate="contact-text">Pentru programări și informații, nu ezitați să ne contactați.</p>
-    <p>📞 0773 956 147</p>
-</section>
-
 <footer>
-  <p>© SkyClean – <span data-translate="footer-copyright-text">Curățenie la nivel înalt</span></p>
+  <p>📞 0773 956 147</p>
+  <p data-translate="footer-copyright">© SkyClean – Curățenie la nivel înalt</p>
 </footer>
 
 <a class="call" href="tel:0773956147" data-translate="fab-call">Sună acum</a>
 
 <script>
-// Parallax effect
-const hero = document.querySelector('.hero');
-window.addEventListener('scroll', () => {
-    const scrollPosition = window.pageYOffset;
-    hero.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
-});
-
-// Burger menu
-const burgerMenu = document.querySelector('.burger-menu');
-const nav = document.querySelector('nav');
-burgerMenu.addEventListener('click', () => {
-    nav.classList.toggle('active');
-});
-
-// Translations
 const translations = {
   'ro': {
     'page-title': 'SkyClean – Curățenie la nivel înalt',
-    'nav-home': 'Acasă',
-    'nav-services': 'Servicii',
-    'nav-contact': 'Contact',
     'hero-title': 'Curățenie profesională la tine acasă',
     'hero-subtitle': 'Canapele • Saltele • Covoare • Mochete',
     'hero-call': '📞 Sună acum: 0773 956 147',
@@ -410,16 +238,11 @@ const translations = {
     'service3-desc': 'Reîmprospătăm culorile și textura.',
     'service4-title': 'Curățare mochete',
     'service4-desc': 'Soluții eficiente pentru birouri și spații comerciale.',
-    'contact-title': 'Contactează-ne',
-    'contact-text': 'Pentru programări și informații, nu ezitați să ne contactați.',
-    'footer-copyright-text': 'Curățenie la nivel înalt',
+    'footer-copyright': '© SkyClean – Curățenie la nivel înalt',
     'fab-call': 'Sună acum'
   },
   'en': {
     'page-title': 'SkyClean – High-level cleaning',
-    'nav-home': 'Home',
-    'nav-services': 'Services',
-    'nav-contact': 'Contact',
     'hero-title': 'Professional cleaning at your home',
     'hero-subtitle': 'Sofas • Mattresses • Carpets • Rugs',
     'hero-call': '📞 Call now: 0773 956 147',
@@ -432,9 +255,7 @@ const translations = {
     'service3-desc': 'We refresh the colors and texture.',
     'service4-title': 'Rug Cleaning',
     'service4-desc': 'Efficient solutions for offices and commercial spaces.',
-    'contact-title': 'Contact Us',
-    'contact-text': 'For appointments and information, do not hesitate to contact us.',
-    'footer-copyright-text': 'High-level cleaning',
+    'footer-copyright': '© SkyClean – High-level cleaning',
     'fab-call': 'Call Now'
   }
 };
