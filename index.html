@@ -29,17 +29,28 @@ header {
 }
 
 .lang-switcher button {
-  background: #0b5ed7;
-  color: white;
+  background: none; /* Remove background color */
   border: none;
-  padding: 8px 12px;
+  padding: 0; /* Remove padding */
   margin-left: 5px;
   border-radius: 5px;
   cursor: pointer;
+  width: 30px; /* Fixed width for button */
+  height: 20px; /* Fixed height for button */
+  overflow: hidden; /* Hide overflow if image is larger */
+  vertical-align: middle; /* Align vertically with other elements */
+}
+
+.lang-switcher button img {
+  width: 100%;
+  height: 100%;
+  display: block; /* Remove extra space below image */
+  object-fit: cover; /* Cover the button area */
+  border-radius: 5px; /* Apply border-radius to the image as well */
 }
 
 .lang-switcher button:hover {
-  background: #0a4fb5;
+  opacity: 0.8; /* Simple hover effect */
 }
 
 header img {
@@ -152,8 +163,8 @@ footer {
 
 <header>
   <div class="lang-switcher">
-    <button onclick="changeLanguage('ro')">RO</button>
-    <button onclick="changeLanguage('en')">EN</button>
+    <button onclick="changeLanguage('ro')"><img src="https://www.countryflags.com/wp-content/uploads/romania-flag-png-large.png" alt="Romanian Flag"></button>
+    <button onclick="changeLanguage('en')"><img src="https://www.countryflags.com/wp-content/uploads/united-kingdom-flag-png-large.png" alt="UK Flag"></button>
   </div>
   <img src="logo.png" alt="SkyClean Logo">
 </header>
