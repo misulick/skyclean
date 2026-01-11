@@ -171,11 +171,15 @@ footer {
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
+  overflow-y: auto; /* Changed to overflow-y to allow vertical scrolling */
   background-color: rgba(0,0,0,0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+}
+
+.modal-dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%; /* Ensure dialog takes full height to center content */
 }
 
 .modal-content {
@@ -296,20 +300,24 @@ footer {
 </section>
 
 <div id="about-us-modal" class="modal">
-  <div class="modal-content">
-    <span class="close-button">&times;</span>
-    <h2 data-translate="about-us-title">Despre noi</h2>
-    <p data-translate="about-us-p1">SkyClean este o companie specializată în curățarea profesională a canapelelor, saltelelor, covoarelor și mochetelor. Folosim echipamente de ultimă generație și detergenți ecologici pentru a asigura o curățenie impecabilă și sigură pentru familia dumneavoastră.</p>
-    <p data-translate="about-us-p2">Misiunea noastră este să aducem un plus de confort și prospețime în casa fiecărui client, eliminând eficient murdăria, petele și alergenii. Echipa noastră este formată din personal calificat și dedicat, gata să răspundă celor mai exigente cerințe.</p>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h2 data-translate="about-us-title">Despre noi</h2>
+      <p data-translate="about-us-p1">SkyClean este o companie specializată în curățarea profesională a canapelelor, saltelelor, covoarelor și mochetelor. Folosim echipamente de ultimă generație și detergenți ecologici pentru a asigura o curățenie impecabilă și sigură pentru familia dumneavoastră.</p>
+      <p data-translate="about-us-p2">Misiunea noastră este să aducem un plus de confort și prospețime în casa fiecărui client, eliminând eficient murdăria, petele și alergenii. Echipa noastră este formată din personal calificat și dedicat, gata să răspundă celor mai exigente cerințe.</p>
+    </div>
   </div>
 </div>
 
 <div id="service-modal" class="modal">
-  <div class="modal-content service-modal-content">
-    <span class="close-button">&times;</span>
-    <h2 id="service-modal-title"></h2>
-    <img id="service-modal-img" src="" alt="">
-    <p id="service-modal-desc"></p>
+  <div class="modal-dialog">
+    <div class="modal-content service-modal-content">
+      <span class="close-button">&times;</span>
+      <h2 id="service-modal-title"></h2>
+      <img id="service-modal-img" src="" alt="">
+      <p id="service-modal-desc"></p>
+    </div>
   </div>
 </div>
 
