@@ -114,6 +114,7 @@ h2 {
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   transition: transform 0.3s;
+  cursor: pointer;
 }
 
 .card:hover {
@@ -156,6 +157,75 @@ footer {
   font-weight: bold;
   box-shadow: 0 6px 20px rgba(0,255,200,0.7);
 }
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background-color: #0b3c5d;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.service-modal-content h2 {
+  text-align: center;
+  color: #7CFFB2;
+}
+#service-modal-img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+.about-us-card {
+  background: #062a45;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 40px;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: transform 0.3s;
+}
+.about-us-card:hover {
+  transform: translateY(-8px);
+}
+.about-us-card h3 {
+  margin: 0;
+  color: #00ffcc;
+  font-size: 24px;
+}
 </style>
 </head>
 
@@ -176,11 +246,14 @@ footer {
 </div>
 
 <section>
+  <div class="about-us-card" id="about-us-button">
+    <h3 data-translate="about-us">Despre noi</h3>
+  </div>
   <h2 data-translate="services-title">Serviciile noastre</h2>
 
   <div class="services">
 
-    <div class="card">
+    <div class="card service-card" data-service="canapea">
       <img src="canapea.jpg">
       <div>
         <h3 data-translate="service1-title">Curățare canapele</h3>
@@ -188,7 +261,7 @@ footer {
       </div>
     </div>
 
-    <div class="card">
+    <div class="card service-card" data-service="saltea">
       <img src="saltea.jpg">
       <div>
         <h3 data-translate="service2-title">Curățare saltele</h3>
@@ -196,7 +269,7 @@ footer {
       </div>
     </div>
 
-    <div class="card">
+    <div class="card service-card" data-service="covor">
       <img src="covor.jpg">
       <div>
         <h3 data-translate="service3-title">Curățare covoare</h3>
@@ -204,7 +277,7 @@ footer {
       </div>
     </div>
 
-    <div class="card">
+    <div class="card service-card" data-service="mocheta">
       <img src="mocheta.jpg">
       <div>
         <h3 data-translate="service4-title">Curățare mochete</h3>
@@ -214,6 +287,24 @@ footer {
 
   </div>
 </section>
+
+<div id="about-us-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <h2 data-translate="about-us-title">Despre noi</h2>
+    <p data-translate="about-us-p1">SkyClean este o companie specializată în curățarea profesională a canapelelor, saltelelor, covoarelor și mochetelor. Folosim echipamente de ultimă generație și detergenți ecologici pentru a asigura o curățenie impecabilă și sigură pentru familia dumneavoastră.</p>
+    <p data-translate="about-us-p2">Misiunea noastră este să aducem un plus de confort și prospețime în casa fiecărui client, eliminând eficient murdăria, petele și alergenii. Echipa noastră este formată din personal calificat și dedicat, gata să răspundă celor mai exigente cerințe.</p>
+  </div>
+</div>
+
+<div id="service-modal" class="modal">
+  <div class="modal-content service-modal-content">
+    <span class="close-button">&times;</span>
+    <h2 id="service-modal-title"></h2>
+    <img id="service-modal-img" src="" alt="">
+    <p id="service-modal-desc"></p>
+  </div>
+</div>
 
 <footer>
   <p>📞 0773 956 147</p>
@@ -239,7 +330,11 @@ const translations = {
     'service4-title': 'Curățare mochete',
     'service4-desc': 'Soluții eficiente pentru birouri și spații comerciale.',
     'footer-copyright': '© SkyClean – Curățenie la nivel înalt',
-    'fab-call': 'Sună acum'
+    'fab-call': 'Sună acum',
+    'about-us': 'Despre noi',
+    'about-us-title': 'Despre noi',
+    'about-us-p1': 'SkyClean este o companie specializată în curățarea profesională a canapelelor, saltelelor, covoarelor și mochetelor. Folosim echipamente de ultimă generație și detergenți ecologici pentru a asigura o curățenie impecabilă și sigură pentru familia dumneavoastră.',
+    'about-us-p2': 'Misiunea noastră este să aducem un plus de confort și prospețime în casa fiecărui client, eliminând eficient murdăria, petele și alergenii. Echipa noastră este formată din personal calificat și dedicat, gata să răspundă celor mai exigente cerințe.'
   },
   'en': {
     'page-title': 'SkyClean – High-level cleaning',
@@ -256,7 +351,11 @@ const translations = {
     'service4-title': 'Rug Cleaning',
     'service4-desc': 'Efficient solutions for offices and commercial spaces.',
     'footer-copyright': '© SkyClean – High-level cleaning',
-    'fab-call': 'Call Now'
+    'fab-call': 'Call Now',
+    'about-us': 'About Us',
+    'about-us-title': 'About Us',
+    'about-us-p1': 'SkyClean is a company specializing in the professional cleaning of sofas, mattresses, carpets, and rugs. We use state-of-the-art equipment and eco-friendly detergents to ensure impeccable and safe cleaning for your family.',
+    'about-us-p2': 'Our mission is to bring extra comfort and freshness to every client\'s home, efficiently eliminating dirt, stains, and allergens. Our team consists of qualified and dedicated staff, ready to meet the most demanding requirements.'
   }
 };
 
@@ -277,6 +376,72 @@ document.addEventListener('DOMContentLoaded', () => {
     changeLanguage(storedLang);
   } else {
     changeLanguage('ro'); // Default to Romanian if no language is stored
+  }
+
+  const aboutUsButton = document.getElementById('about-us-button');
+  const aboutUsModal = document.getElementById('about-us-modal');
+  const serviceModal = document.getElementById('service-modal');
+  const closeButtons = document.getElementsByClassName('close-button');
+
+  aboutUsButton.onclick = function() {
+    aboutUsModal.style.display = 'block';
+  }
+
+  for (let closeButton of closeButtons) {
+    closeButton.onclick = function() {
+      aboutUsModal.style.display = 'none';
+      serviceModal.style.display = 'none';
+    }
+  }
+
+  window.onclick = function(event) {
+    if (event.target == aboutUsModal) {
+      aboutUsModal.style.display = 'none';
+    }
+    if (event.target == serviceModal) {
+      serviceModal.style.display = 'none';
+    }
+  }
+
+  const serviceCards = document.getElementsByClassName('service-card');
+  const serviceModalImg = document.getElementById('service-modal-img');
+  const serviceModalTitle = document.getElementById('service-modal-title');
+  const serviceModalDesc = document.getElementById('service-modal-desc');
+
+  for (let card of serviceCards) {
+    card.onclick = function() {
+      const service = card.getAttribute('data-service');
+      const lang = document.documentElement.lang;
+      let title, desc, img;
+
+      switch(service) {
+        case 'canapea':
+          title = translations[lang]['service1-title'];
+          desc = translations[lang]['service1-desc'];
+          img = 'canapea.jpg';
+          break;
+        case 'saltea':
+          title = translations[lang]['service2-title'];
+          desc = translations[lang]['service2-desc'];
+          img = 'saltea.jpg';
+          break;
+        case 'covor':
+          title = translations[lang]['service3-title'];
+          desc = translations[lang]['service3-desc'];
+          img = 'covor.jpg';
+          break;
+        case 'mocheta':
+          title = translations[lang]['service4-title'];
+          desc = translations[lang]['service4-desc'];
+          img = 'mocheta.jpg';
+          break;
+      }
+
+      serviceModalImg.src = img;
+      serviceModalTitle.textContent = title;
+      serviceModalDesc.textContent = desc;
+      serviceModal.style.display = 'block';
+    }
   }
 });
 </script>
