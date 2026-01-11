@@ -267,7 +267,18 @@ function changeLanguage(lang) {
     const key = el.getAttribute('data-translate');
     el.textContent = translations[lang][key];
   });
+  localStorage.setItem('selectedLanguage', lang); // Store selected language
 }
+
+// Apply stored language on page load
+document.addEventListener('DOMContentLoaded', () => {
+  const storedLang = localStorage.getItem('selectedLanguage');
+  if (storedLang) {
+    changeLanguage(storedLang);
+  } else {
+    changeLanguage('ro'); // Default to Romanian if no language is stored
+  }
+});
 </script>
 
 </body>
