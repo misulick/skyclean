@@ -13,6 +13,10 @@ body {
   color: #fff;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 /* HEADER */
 header {
   text-align: center;
@@ -169,6 +173,9 @@ footer {
   height: 100%;
   overflow: auto;
   background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-content {
@@ -178,10 +185,8 @@ footer {
   width: 80%;
   max-width: 600px;
   border-radius: 10px;
-  position: fixed; /* Changed from relative to fixed for centering */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  margin: auto;
 }
 
 .close-button {
@@ -387,21 +392,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
   aboutUsButton.onclick = function() {
     aboutUsModal.style.display = 'block';
+    document.body.classList.add('modal-open');
   }
 
   for (let closeButton of closeButtons) {
     closeButton.onclick = function() {
       aboutUsModal.style.display = 'none';
       serviceModal.style.display = 'none';
+      document.body.classList.remove('modal-open');
     }
   }
 
   window.onclick = function(event) {
     if (event.target == aboutUsModal) {
       aboutUsModal.style.display = 'none';
+      document.body.classList.remove('modal-open');
     }
     if (event.target == serviceModal) {
       serviceModal.style.display = 'none';
+      document.body.classList.remove('modal-open');
     }
   }
 
@@ -443,6 +452,7 @@ document.addEventListener('DOMContentLoaded', () => {
       serviceModalTitle.textContent = title;
       serviceModalDesc.textContent = desc;
       serviceModal.style.display = 'block';
+      document.body.classList.add('modal-open');
     }
   }
 });
