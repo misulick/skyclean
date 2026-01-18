@@ -219,6 +219,26 @@ footer {
   margin-bottom: 20px;
   border-radius: 10px;
 }
+.about-us-modal-icon {
+  display: block;
+  height: 300px;
+  width: 300px; /* Fixed width for the image */
+  object-fit: cover; /* Ensure image covers the area */
+  margin-right: 20px;
+  float: left;
+}
+.about-us-modal-body {
+}
+.about-us-modal-body::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.about-us-modal-body > div {
+}
+.about-us-modal-body > div p {
+  text-align: left;
+}
 .about-us-card {
   background: #062a45;
   border-radius: 20px;
@@ -304,8 +324,23 @@ footer {
     <div class="modal-content">
       <span class="close-button">&times;</span>
       <h2 data-translate="about-us-title">Despre noi</h2>
-      <p data-translate="about-us-p1">SkyClean este o companie specializată în curățarea profesională a canapelelor, saltelelor, covoarelor și mochetelor. Folosim echipamente de ultimă generație și detergenți ecologici pentru a asigura o curățenie impecabilă și sigură pentru familia dumneavoastră.</p>
-      <p data-translate="about-us-p2">Misiunea noastră este să aducem un plus de confort și prospețime în casa fiecărui client, eliminând eficient murdăria, petele și alergenii. Echipa noastră este formată din personal calificat și dedicat, gata să răspundă celor mai exigente cerințe.</p>
+      <div class="about-us-modal-body">
+        <img src="aspirator.png" alt="Aspirator" class="about-us-modal-icon">
+        <div>
+          <h3 data-translate="about-us-chapter1-title">Tehnologie Profesională de Top</h3>
+          <p data-translate="about-us-chapter1-p1">La SkyClean, standardele ridicate de curățenie sunt susținute de tehnologie profesională de top și proceduri avansate de lucru. Investim constant în echipamente performante pentru a oferi rezultate superioare în curățarea covoarelor, mochetelor, saltelelor și tapițeriilor.</p>
+          
+          <h3 data-translate="about-us-chapter2-title">Echipament de Înaltă Performanță: Advance 600</h3>
+          <p data-translate="about-us-chapter2-p1">Utilizăm Advance 600 – sistem profesional de curățare cu injecție–extracție, echipat cu tehnologie Twin sau Triple Vac, recunoscută pentru puterea mare de extracție și capacitatea de a elimina murdăria adânc impregnată în fibre. Presiunea controlată a soluției, combinată cu vacuumul de înaltă performanță, asigură o curățare în profunzime, o recuperare eficientă a reziduurilor și timp de uscare semnificativ redus.</p>
+          
+          <h3 data-translate="about-us-chapter3-title">Aplicații Diverse și Soluții Sigure</h3>
+          <p data-translate="about-us-chapter3-p1">Acest tip de echipament ne permite să intervenim eficient atât în locuințe private, cât și în spații comerciale și birouri, inclusiv în zone cu trafic intens, unde igienizarea corectă este esențială. Procedurile noastre sunt completate de soluții profesionale atent selecționate, sigure pentru utilizatori și compatibile cu cele mai sensibile tipuri de materiale.</p>
+          
+          <h3 data-translate="about-us-chapter4-title">Misiunea Noastră: Durabilitate și Confort</h3>
+          <p data-translate="about-us-chapter4-p1">La SkyClean, tehnologia, experiența și atenția la detalii se îmbină pentru a livra servicii de curățenie la standarde profesionale, orientate spre durabilitate, igienă și confort.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
@@ -348,8 +383,14 @@ const translations = {
     'fab-call': 'Sună acum',
     'about-us': 'Despre noi',
     'about-us-title': 'Despre noi',
-    'about-us-p1': 'SkyClean este o companie specializată în curățarea profesională a canapelelor, saltelelor, covoarelor și mochetelor. Folosim echipamente de ultimă generație și detergenți ecologici pentru a asigura o curățenie impecabilă și sigură pentru familia dumneavoastră.',
-    'about-us-p2': 'Misiunea noastră este să aducem un plus de confort și prospețime în casa fiecărui client, eliminând eficient murdăria, petele și alergenii. Echipa noastră este formată din personal calificat și dedicat, gata să răspundă celor mai exigente cerințe.'
+    'about-us-chapter1-title': 'Tehnologie Profesională de Top',
+    'about-us-chapter1-p1': 'La SkyClean, standardele ridicate de curățenie sunt susținute de tehnologie profesională de top și proceduri avansate de lucru. Investim constant în echipamente performante pentru a oferi rezultate superioare în curățarea covoarelor, mochetelor, saltelelor și tapițeriilor.',
+    'about-us-chapter2-title': 'Echipament de Înaltă Performanță: Advance 600',
+    'about-us-chapter2-p1': 'Utilizăm Advance 600 – sistem profesional de curățare cu injecție–extracție, echipat cu tehnologie Twin sau Triple Vac, recunoscută pentru puterea mare de extracție și capacitatea de a elimina murdăria adânc impregnată în fibre. Presiunea controlată a soluției, combinată cu vacuumul de înaltă performanță, asigură o curățare în profunzime, o recuperare eficientă a reziduurilor și timp de uscare semnificativ redus.',
+    'about-us-chapter3-title': 'Aplicații Diverse și Soluții Sigure',
+    'about-us-chapter3-p1': 'Acest tip de echipament ne permite să intervenim eficient atât în locuințe private, cât și în spații comerciale și birouri, inclusiv în zone cu trafic intens, unde igienizarea corectă este esențială. Procedurile noastre sunt completate de soluții profesionale atent selecționate, sigure pentru utilizatori și compatibile cu cele mai sensibile tipuri de materiale.',
+    'about-us-chapter4-title': 'Misiunea Noastră: Durabilitate și Confort',
+    'about-us-chapter4-p1': 'La SkyClean, tehnologia, experiența și atenția la detalii se îmbină pentru a livra servicii de curățenie la standarde profesionale, orientate spre durabilitate, igienă și confort.'
   },
   'en': {
     'page-title': 'SkyClean – High-level cleaning',
@@ -369,8 +410,14 @@ const translations = {
     'fab-call': 'Call Now',
     'about-us': 'About Us',
     'about-us-title': 'About Us',
-    'about-us-p1': 'SkyClean is a company specializing in the professional cleaning of sofas, mattresses, carpets, and rugs. We use state-of-the-art equipment and eco-friendly detergents to ensure impeccable and safe cleaning for your family.',
-    'about-us-p2': 'Our mission is to bring extra comfort and freshness to every client\'s home, efficiently eliminating dirt, stains, and allergens. Our team consists of qualified and dedicated staff, ready to meet the most demanding requirements.'
+    'about-us-chapter1-title': 'Top Professional Technology',
+    'about-us-chapter1-p1': 'At SkyClean, high cleaning standards are supported by top professional technology and advanced working procedures. We constantly invest in high-performance equipment to provide superior results in cleaning carpets, rugs, mattresses, and upholstery.',
+    'about-us-chapter2-title': 'High-Performance Equipment: Advance 600',
+    'about-us-chapter2-p1': 'We use Advance 600 – a professional injection-extraction cleaning system, equipped with Twin or Triple Vac technology, recognized for its high extraction power and ability to eliminate deeply embedded dirt in fibers. The controlled pressure of the solution, combined with high-performance vacuuming, ensures deep cleaning, efficient residue recovery, and significantly reduced drying time.',
+    'about-us-chapter3-title': 'Diverse Applications and Safe Solutions',
+    'about-us-chapter3-p1': 'This type of equipment allows us to intervene efficiently in both private homes and commercial spaces and offices, including high-traffic areas where proper sanitization is essential. Our procedures are complemented by carefully selected professional solutions, safe for users and compatible with the most sensitive types of materials.',
+    'about-us-chapter4-title': 'Our Mission: Durability and Comfort',
+    'about-us-chapter4-p1': 'At SkyClean, technology, experience, and attention to detail combine to deliver cleaning services at professional standards, focused on durability, hygiene, and comfort.'
   }
 };
 
