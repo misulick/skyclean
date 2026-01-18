@@ -288,7 +288,6 @@ footer {
       <img src="canapea.jpg">
       <div>
         <h3 data-translate="service1-title">Curățare canapele</h3>
-        <p data-translate="service1-desc">Eliminăm petele, murdăria și mirosurile neplăcute.</p>
       </div>
     </div>
 
@@ -296,7 +295,6 @@ footer {
       <img src="saltea.jpg">
       <div>
         <h3 data-translate="service2-title">Curățare saltele</h3>
-        <p data-translate="service2-desc">Curățare profundă pentru un somn sănătos.</p>
       </div>
     </div>
 
@@ -483,14 +481,6 @@ const translations = {
     'service4-chapter3-p1': 'For hotels and corporate spaces, the service is optimized for rapid, scheduled interventions with efficient drying, so that activity can continue without major interruptions. We offer solutions adapted to large areas, including periodic maintenance plans to maintain hygiene standards and the professional appearance of the spaces.',
     'service4-chapter4-title': 'Your Trusted Partner for Rug Cleaning',
     'service4-chapter4-p1': 'Choose SkyClean for professional rug cleaning in Bucharest and its surroundings – a reliable partner for offices, hotels, and commercial spaces that prioritize quality and image.',
-    'service4-chapter1-title': 'Professional Rug Cleaning',
-    'service4-chapter1-p1': 'SkyClean offers professional rug cleaning services, tailored for both private residences and offices, company headquarters, and commercial spaces.',
-    'service4-chapter2-title': 'Deep Efficiency and Fiber Protection',
-    'service4-chapter2-p1': 'Our procedures ensure efficient deep cleaning, without affecting the colors, texture, or fiber structure, even for heavily used rugs. We remove persistent stains, accumulated dirt, bacteria, and allergens, restoring a clean and refreshed appearance to your rugs.',
-    'service4-chapter3-title': 'Solutions for the Corporate Environment',
-    'service4-chapter3-p1': 'For the corporate environment, the service is designed for rapid interventions, with efficient drying, so that activity can resume quickly, maintaining a high standard of hygiene and a professional image of the space.',
-    'service4-chapter4-title': 'Conclusion',
-    'service4-chapter4-p1': 'Choose SkyClean for professional rug cleaning in Bucharest and its surroundings – a safe, efficient solution adapted to both home comfort and the demands of the business environment.',
     'footer-copyright': '© SkyClean – High-level cleaning',
     'fab-call': 'Call Now',
     'about-us': 'About Us',
@@ -511,7 +501,9 @@ function changeLanguage(lang) {
   document.title = translations[lang]['page-title'];
   document.querySelectorAll('[data-translate]').forEach(el => {
     const key = el.getAttribute('data-translate');
-    el.textContent = translations[lang][key];
+    if (translations[lang][key]) {
+      el.textContent = translations[lang][key];
+    }
   });
   localStorage.setItem('selectedLanguage', lang); // Store selected language
 }
@@ -580,7 +572,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
           dynamicContent += `<h3>${translations[lang]['service1-chapter2-title']}</h3>`;
           dynamicContent += `<p>${translations[lang]['service1-chapter2-p1']}</p>`;
-          dynamicContent += translations[lang]['service1-chapter2-list']; // This is already HTML list
+          dynamicContent += translations[lang]['service1-chapter2-list'];
 
           dynamicContent += `<h3>${translations[lang]['service1-chapter3-title']}</h3>`;
           dynamicContent += `<p>${translations[lang]['service1-chapter3-p1']}</p>`;
@@ -588,7 +580,7 @@ document.addEventListener('DOMContentLoaded', () => {
           dynamicContent += `<h3>${translations[lang]['service1-chapter4-title']}</h3>`;
           dynamicContent += `<p>${translations[lang]['service1-chapter4-p1']}</p>`;
 
-          dynamicContent += `<h3><strong>${translations[lang]['service1-chapter5-title']}</strong></h3>`; // Make the title bold
+          dynamicContent += `<h3><strong>${translations[lang]['service1-chapter5-title']}</strong></h3>`;
           dynamicContent += `<p>${translations[lang]['service1-chapter5-p1']}</p>`;
           dynamicContent += translations[lang]['service1-chapter5-list'];
 
@@ -609,7 +601,7 @@ document.addEventListener('DOMContentLoaded', () => {
           dynamicContent += `<h3>${translations[lang]['service2-chapter3-title']}</h3>`;
           dynamicContent += `<p>${translations[lang]['service2-chapter3-p1']}</p>`;
 
-          dynamicContent += `<h3><strong>${translations[lang]['service2-chapter4-title']}</strong></h3>`; // Make the title bold
+          dynamicContent += `<h3><strong>${translations[lang]['service2-chapter4-title']}</strong></h3>`;
           dynamicContent += `<p>${translations[lang]['service2-chapter4-p1']}</p>`;
           dynamicContent += translations[lang]['service2-chapter4-list'];
 
@@ -630,7 +622,7 @@ document.addEventListener('DOMContentLoaded', () => {
           dynamicContent += `<h3>${translations[lang]['service3-chapter3-title']}</h3>`;
           dynamicContent += `<p>${translations[lang]['service3-chapter3-p1']}</p>`;
 
-          dynamicContent += `<h3><strong>${translations[lang]['service3-chapter4-title']}</strong></h3>`; // Make the title bold
+          dynamicContent += `<h3><strong>${translations[lang]['service3-chapter4-title']}</strong></h3>`;
           dynamicContent += `<p>${translations[lang]['service3-chapter4-p1']}</p>`;
           break;
         case 'mocheta':
@@ -647,7 +639,7 @@ document.addEventListener('DOMContentLoaded', () => {
           dynamicContent += `<h3>${translations[lang]['service4-chapter3-title']}</h3>`;
           dynamicContent += `<p>${translations[lang]['service4-chapter3-p1']}</p>`;
 
-          dynamicContent += `<h3><strong>${translations[lang]['service4-chapter4-title']}</strong></h3>`; // Make the title bold
+          dynamicContent += `<h3><strong>${translations[lang]['service4-chapter4-title']}</strong></h3>`;
           dynamicContent += `<p>${translations[lang]['service4-chapter4-p1']}</p>`;
           break;
       }
