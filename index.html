@@ -351,7 +351,8 @@ footer {
       <span class="close-button">&times;</span>
       <h2 id="service-modal-title"></h2>
       <img id="service-modal-img" src="" alt="">
-      <p id="service-modal-desc"></p>
+      <div id="service-modal-text-content"></div>
+
     </div>
   </div>
 </div>
@@ -372,7 +373,20 @@ const translations = {
     'hero-call': '📞 Sună acum: 0773 956 147',
     'services-title': 'Serviciile noastre',
     'service1-title': 'Curățare canapele',
-    'service1-desc': 'Eliminăm petele, murdăria și mirosurile neplăcute.',
+    'service1-chapter1-title': 'Introducere Serviciu',
+    'service1-chapter1-p1': 'Oferim servicii de curățare profesională pentru canapele, scaune și fotolii în București și zonele limitrofe, folosind echipamente de ultimă generație cu sistem injecție–extracție. Această metodă asigură o curățare în profunzime, eliminând murdăria, petele, bacteriile, acarienii și alergenii din țesături.',
+    'service1-chapter2-title': 'Ce Curățăm?',
+    'service1-chapter2-p1': 'Asigurăm curățarea completă a mobilierului tapițat, nu doar a zonelor vizibile. Curățăm:',
+    'service1-chapter2-list': '<ul><li>canapele (șezut, spătar, brațe)</li><li>partea din spate a canapelei</li><li>fotolii</li><li>scaune tapițate (bucătărie, living, birou)</li></ul>',
+    'service1-chapter3-title': 'Soluții Profesionale și Sigure',
+    'service1-chapter3-p1': 'Folosim soluții profesionale, sigure pentru copii și animale de companie, care elimină mirosurile neplăcute și redau prospețimea materialelor.',
+    'service1-chapter4-title': 'Curățare Piele',
+    'service1-chapter4-p1': 'De asemenea, oferim curățare canapele, fotolii și scaune din piele, utilizând produse speciale care curăță delicat, hidratează și protejează pielea, fără a o deteriora.',
+    'service1-chapter5-title': 'De ce SkyClean?',
+    'service1-chapter5-p1': 'De ce să alegi serviciile noastre de curățare mobilier tapițat în București?',
+    'service1-chapter5-list': '<ul><li>✔ Curățare completă, inclusiv spatele canapelei</li><li>✔ Curățare canapele, fotolii și scaune textile sau din piele</li><li>✔ Eliminare pete, bacterii, acarieni și alergeni</li><li>✔ Intervenții rapide în București și împrejurimi</li></ul>',
+    'service1-chapter6-title': 'Concluzie',
+    'service1-chapter6-p1': 'Alege curățarea profesională a mobilierului tapițat la domiciliu în București și bucură-te de un ambient curat, igienizat și sănătos.',
     'service2-title': 'Curățare saltele',
     'service2-desc': 'Curățare profundă pentru un somn sănătos.',
     'service3-title': 'Curățare covoare',
@@ -399,7 +413,20 @@ const translations = {
     'hero-call': '📞 Call now: 0773 956 147',
     'services-title': 'Our Services',
     'service1-title': 'Sofa Cleaning',
-    'service1-desc': 'We remove stains, dirt, and unpleasant odors.',
+    'service1-chapter1-title': 'Service Introduction',
+    'service1-chapter1-p1': 'We offer professional cleaning services for sofas, chairs, and armchairs in Bucharest and the surrounding areas, using state-of-the-art injection-extraction equipment. This method ensures deep cleaning, eliminating dirt, stains, bacteria, dust mites, and allergens from fabrics.',
+    'service1-chapter2-title': 'What We Clean?',
+    'service1-chapter2-p1': 'We ensure complete cleaning of upholstered furniture, not just the visible areas. We clean:',
+    'service1-chapter2-list': '<ul><li>sofas (seat, backrest, arms)</li><li>back of the sofa</li><li>armchairs</li><li>upholstered chairs (kitchen, living room, office)</li></ul>',
+    'service1-chapter3-title': 'Professional and Safe Solutions',
+    'service1-chapter3-p1': 'We use professional solutions, safe for children and pets, which eliminate unpleasant odors and restore the freshness of materials.',
+    'service1-chapter4-title': 'Leather Cleaning',
+    'service1-chapter4-p1': 'We also offer cleaning for leather sofas, armchairs, and chairs, using special products that gently clean, hydrate, and protect the leather without damaging it.',
+    'service1-chapter5-title': 'Why SkyClean?',
+    'service1-chapter5-p1': 'Why choose our upholstered furniture cleaning services in Bucharest?',
+    'service1-chapter5-list': '<ul><li>✔ Complete cleaning, including the back of the sofa</li><li>✔ Cleaning of sofas, armchairs, and textile or leather chairs</li><li>✔ Removal of stains, bacteria, dust mites, and allergens</li><li>✔ Rapid interventions in Bucharest and its surroundings</li></ul>',
+    'service1-chapter6-title': 'Conclusion',
+    'service1-chapter6-p1': 'Choose professional upholstered furniture cleaning at home in Bucharest and enjoy a clean, sanitized, and healthy environment.',
     'service2-title': 'Mattress Cleaning',
     'service2-desc': 'Deep cleaning for a healthy sleep.',
     'service3-title': 'Carpet Cleaning',
@@ -472,40 +499,67 @@ document.addEventListener('DOMContentLoaded', () => {
   const serviceCards = document.getElementsByClassName('service-card');
   const serviceModalImg = document.getElementById('service-modal-img');
   const serviceModalTitle = document.getElementById('service-modal-title');
-  const serviceModalDesc = document.getElementById('service-modal-desc');
+  const serviceModalTextContent = document.getElementById('service-modal-text-content'); // New element to populate
 
   for (let card of serviceCards) {
     card.onclick = function() {
       const service = card.getAttribute('data-service');
       const lang = document.documentElement.lang;
-      let title, desc, img;
+      let title, img;
+      let dynamicContent = ''; // This will hold our HTML structure for chapters and paragraphs
+
+      // Clear previous dynamic content
+      serviceModalTextContent.innerHTML = '';
 
       switch(service) {
         case 'canapea':
           title = translations[lang]['service1-title'];
-          desc = translations[lang]['service1-desc'];
           img = 'canapea.jpg';
+
+          // Build dynamic content for canapea
+          dynamicContent += `<h3>${translations[lang]['service1-chapter1-title']}</h3>`;
+          dynamicContent += `<p>${translations[lang]['service1-chapter1-p1']}</p>`;
+
+          dynamicContent += `<h3>${translations[lang]['service1-chapter2-title']}</h3>`;
+          dynamicContent += `<p>${translations[lang]['service1-chapter2-p1']}</p>`;
+          dynamicContent += translations[lang]['service1-chapter2-list']; // This is already HTML list
+
+          dynamicContent += `<h3>${translations[lang]['service1-chapter3-title']}</h3>`;
+          dynamicContent += `<p>${translations[lang]['service1-chapter3-p1']}</p>`;
+
+          dynamicContent += `<h3>${translations[lang]['service1-chapter4-title']}</h3>`;
+          dynamicContent += `<p>${translations[lang]['service1-chapter4-p1']}</p>`;
+
+          dynamicContent += `<h3><strong>${translations[lang]['service1-chapter5-title']}</strong></h3>`; // Make the title bold
+          dynamicContent += `<p>${translations[lang]['service1-chapter5-p1']}</p>`;
+          dynamicContent += translations[lang]['service1-chapter5-list'];
+
+          dynamicContent += `<h3>${translations[lang]['service1-chapter6-title']}</h3>`;
+          dynamicContent += `<p>${translations[lang]['service1-chapter6-p1']}</p>`;
           break;
         case 'saltea':
           title = translations[lang]['service2-title'];
-          desc = translations[lang]['service2-desc'];
+          var desc = translations[lang]['service2-desc'];
           img = 'saltea.jpg';
+          dynamicContent = `<p>${desc}</p>`;
           break;
         case 'covor':
           title = translations[lang]['service3-title'];
-          desc = translations[lang]['service3-desc'];
+          var desc = translations[lang]['service3-desc'];
           img = 'covor.jpg';
+          dynamicContent = `<p>${desc}</p>`;
           break;
         case 'mocheta':
           title = translations[lang]['service4-title'];
-          desc = translations[lang]['service4-desc'];
+          var desc = translations[lang]['service4-desc'];
           img = 'mocheta.jpg';
+          dynamicContent = `<p>${desc}</p>`;
           break;
       }
 
       serviceModalImg.src = img;
       serviceModalTitle.textContent = title;
-      serviceModalDesc.textContent = desc;
+      serviceModalTextContent.innerHTML = dynamicContent; // Set the dynamic content
       serviceModal.style.display = 'block';
       document.body.classList.add('modal-open');
     }
