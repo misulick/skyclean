@@ -388,7 +388,17 @@ const translations = {
     'service1-chapter6-title': 'Concluzie',
     'service1-chapter6-p1': 'Alege curățarea profesională a mobilierului tapițat la domiciliu în București și bucură-te de un ambient curat, igienizat și sănătos.',
     'service2-title': 'Curățare saltele',
-    'service2-desc': 'Curățare profundă pentru un somn sănătos.',
+    'service2-chapter1-title': 'Curățare Saltele Profesională în București și Împrejurimi',
+    'service2-chapter1-p1': 'Oferim servicii de curățare saltele profesională în București și zonele limitrofe, utilizând echipamente de ultimă generație cu sistem injecție–extracție, pentru o curățare profundă și igienizare completă. Această metodă permite eliminarea eficientă a murdăriei, petelor, acarienilor, bacteriilor și alergenilor acumulați în profunzimea saltelei.',
+    'service2-chapter2-title': 'Igienizare Completă și Aspect Proaspăt',
+    'service2-chapter2-p1': 'Curățăm saltelele în întregime, pe ambele fețe (acolo unde este posibil), asigurând o igienizare completă a suprafeței de dormit. Intervenim asupra petelor de transpirație, lichide, urme organice și mirosuri neplăcute, redând saltelei un aspect curat și proaspăt.',
+    'service2-chapter3-title': 'Soluții Sigure și Beneficii pentru Sănătate',
+    'service2-chapter3-p1': 'Folosim soluții profesionale, sigure pentru copii și animale de companie, ideale pentru persoanele sensibile sau alergice. Curățarea profesională a saltelei contribuie la un somn mai sănătos și la prelungirea duratei de viață a acesteia.',
+    'service2-chapter4-title': 'De ce SkyClean pentru Saltele?',
+    'service2-chapter4-p1': 'De ce să alegi serviciile noastre de curățare saltele în București?',
+    'service2-chapter4-list': '<ul><li>✔ Curățare saltele pe ambele fețe</li><li>✔ Eliminare acarieni, bacterii și alergeni</li><li>✔ Îndepărtare pete și mirosuri neplăcute</li><li>✔ Intervenții rapide în București și împrejurimi</li></ul>',
+    'service2-chapter5-title': 'Concluzie',
+    'service2-chapter5-p1': 'Alege curățarea profesională a saltelei la domiciliu în București și bucură-te de un mediu curat, igienizat și un somn mai odihnitor.',
     'service3-title': 'Curățare covoare',
     'service3-desc': 'Reîmprospătăm culorile și textura.',
     'service4-title': 'Curățare mochete',
@@ -428,7 +438,17 @@ const translations = {
     'service1-chapter6-title': 'Conclusion',
     'service1-chapter6-p1': 'Choose professional upholstered furniture cleaning at home in Bucharest and enjoy a clean, sanitized, and healthy environment.',
     'service2-title': 'Mattress Cleaning',
-    'service2-desc': 'Deep cleaning for a healthy sleep.',
+    'service2-chapter1-title': 'Professional Mattress Cleaning in Bucharest and Surroundings',
+    'service2-chapter1-p1': 'We offer professional mattress cleaning services in Bucharest and neighboring areas, using state-of-the-art injection-extraction equipment for deep cleaning and complete sanitization. This method allows for the efficient removal of dirt, stains, dust mites, bacteria, and allergens accumulated deep within the mattress.',
+    'service2-chapter2-title': 'Complete Sanitization and Fresh Appearance',
+    'service2-chapter2-p1': 'We clean mattresses entirely, on both sides (where possible), ensuring complete sanitization of the sleeping surface. We address sweat stains, liquids, organic traces, and unpleasant odors, restoring a clean and fresh look to the mattress.',
+    'service2-chapter3-title': 'Safe Solutions and Health Benefits',
+    'service2-chapter3-p1': 'We use professional solutions, safe for children and pets, ideal for sensitive or allergic individuals. Professional mattress cleaning contributes to healthier sleep and extends its lifespan.',
+    'service2-chapter4-title': 'Why SkyClean for Mattresses?',
+    'service2-chapter4-p1': 'Why choose our mattress cleaning services in Bucharest?',
+    'service2-chapter4-list': '<ul><li>✔ Mattress cleaning on both sides</li><li>✔ Elimination of dust mites, bacteria, and allergens</li><li>✔ Stain and unpleasant odor removal</li><li>✔ Rapid interventions in Bucharest and surroundings</li></ul>',
+    'service2-chapter5-title': 'Conclusion',
+    'service2-chapter5-p1': 'Choose professional mattress cleaning at home in Bucharest and enjoy a clean, sanitized environment and a more restful sleep.',
     'service3-title': 'Carpet Cleaning',
     'service3-desc': 'We refresh the colors and texture.',
     'service4-title': 'Rug Cleaning',
@@ -539,9 +559,24 @@ document.addEventListener('DOMContentLoaded', () => {
           break;
         case 'saltea':
           title = translations[lang]['service2-title'];
-          var desc = translations[lang]['service2-desc'];
           img = 'saltea.jpg';
-          dynamicContent = `<p>${desc}</p>`;
+
+          // Build dynamic content for saltea
+          dynamicContent += `<h3>${translations[lang]['service2-chapter1-title']}</h3>`;
+          dynamicContent += `<p>${translations[lang]['service2-chapter1-p1']}</p>`;
+
+          dynamicContent += `<h3>${translations[lang]['service2-chapter2-title']}</h3>`;
+          dynamicContent += `<p>${translations[lang]['service2-chapter2-p1']}</p>`;
+
+          dynamicContent += `<h3>${translations[lang]['service2-chapter3-title']}</h3>`;
+          dynamicContent += `<p>${translations[lang]['service2-chapter3-p1']}</p>`;
+
+          dynamicContent += `<h3><strong>${translations[lang]['service2-chapter4-title']}</strong></h3>`; // Make the title bold
+          dynamicContent += `<p>${translations[lang]['service2-chapter4-p1']}</p>`;
+          dynamicContent += translations[lang]['service2-chapter4-list'];
+
+          dynamicContent += `<h3>${translations[lang]['service2-chapter5-title']}</h3>`;
+          dynamicContent += `<p>${translations[lang]['service2-chapter5-p1']}</p>`;
           break;
         case 'covor':
           title = translations[lang]['service3-title'];
