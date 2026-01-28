@@ -270,7 +270,7 @@ footer {
     <button onclick="changeLanguage('ro')"><img src="https://www.countryflags.com/wp-content/uploads/romania-flag-png-large.png" alt="Romanian Flag"></button>
     <button onclick="changeLanguage('en')"><img src="https://www.countryflags.com/wp-content/uploads/united-kingdom-flag-png-large.png" alt="UK Flag"></button>
   </div>
-  <img src="fara telefon logo.png" alt="SkyClean Logo">
+  <img src="fara telefon logo.png" alt="SkyClean Logo" id="logo-img">
 </header>
 
 <div class="hero">
@@ -637,6 +637,7 @@ const translations = {
 };
 
 function changeLanguage(lang) {
+  document.getElementById('logo-img').src = lang === 'en' ? 'eng logo.png' : 'fara telefon logo.png';
   document.documentElement.lang = lang;
   document.title = translations[lang]['page-title'];
   document.querySelectorAll('[data-translate]').forEach(el => {
