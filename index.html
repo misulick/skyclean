@@ -691,9 +691,17 @@ document.addEventListener('DOMContentLoaded', () => {
   window.onclick = function(event) {
     const modals = document.getElementsByClassName('modal');
     for (let modal of modals) {
-      if (event.target == modal) {
-        modal.style.display = 'none';
-        document.body.classList.remove('modal-open');
+      if (modal.style.display === 'block') { // Only consider currently visible modals
+        const modalContent = modal.querySelector('.modal-content');
+        const modalDialog = modal.querySelector('.modal-dialog'); // Get the dialog element
+
+        // Check if the click occurred on the modal backdrop (the .modal element itself)
+        // OR on the modal-dialog (which might fill the modal area but is still outside content)
+        // AND importantly, ensure the click was NOT inside the modalContent or its children
+        if ((event.target === modal || event.target === modalDialog) && modalContent && !modalContent.contains(event.target)) {
+          modal.style.display = 'none';
+          document.body.classList.remove('modal-open');
+        }
       }
     }
   }
