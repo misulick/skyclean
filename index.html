@@ -639,6 +639,16 @@ const translations = {
 function changeLanguage(lang) {
   document.documentElement.lang = lang;
   document.title = translations[lang]['page-title'];
+
+  const logoImg = document.querySelector('header img');
+  if (logoImg) {
+    if (lang === 'ro') {
+      logoImg.src = 'fara telefon logo.png';
+    } else if (lang === 'en') {
+      logoImg.src = 'eng logo.png';
+    }
+  }
+
   document.querySelectorAll('[data-translate]').forEach(el => {
     const key = el.getAttribute('data-translate');
     if (translations[lang][key]) {
