@@ -266,6 +266,7 @@ footer {
   font-size: 24px;
 }
 </style>
+<link rel="stylesheet" href="/assets/css/quote-form.css">
 </head>
 
 <body>
@@ -324,6 +325,74 @@ footer {
   <div class="about-us-card" id="price-list-button">
     <h3 data-translate="price-list">Lista de preturi</h3>
   </div>
+</section>
+
+<section id="oferta" class="quote">
+  <h2>Cere ofertă rapidă</h2>
+  <p>Completează 30 secunde și îți răspundem rapid (apel / WhatsApp).</p>
+
+  <form id="quoteForm">
+    <div class="grid">
+      <label>
+        Nume
+        <input type="text" name="name" autocomplete="name" required>
+      </label>
+
+      <label>
+        Telefon
+        <input type="tel" name="phone" inputmode="tel" autocomplete="tel" required>
+      </label>
+
+      <label>
+        Oraș / Zonă
+        <input type="text" name="area" placeholder="București, Ilfov, Otopeni..." required>
+      </label>
+
+      <label>
+        Serviciu
+        <select name="service" required>
+          <option value="">Alege serviciul</option>
+          <option>Curățare canapea / colțar</option>
+          <option>Curățare saltea</option>
+          <option>Curățare covor</option>
+          <option>Curățare mochetă</option>
+          <option>Scaune / fotolii</option>
+          <option>Altceva</option>
+        </select>
+      </label>
+
+      <label>        Câte bucăți?
+        <input type="number" name="qty" min="1" value="1" required>
+      </label>
+
+      <label>
+        Cât de urgent?
+        <select name="urgency" required>
+          <option>Azi</option>
+          <option>Mâine</option>
+          <option>Săptămâna asta</option>
+          <option>Nu e urgent</option>
+        </select>
+      </label>
+    </div>
+
+    <label>
+      Detalii (opțional)
+      <textarea name="details" rows="4" placeholder="Pete, mirosuri, dimensiune, etaj, acces..."></textarea>
+    </label>
+
+    <label class="check">
+      <input type="checkbox" name="consent" required>
+      Sunt de acord să fiu contactat(ă) pentru ofertă.
+    </label>
+
+    <div class="actions">
+      <button type="submit">Trimite pe WhatsApp</button>
+      <a class="btn secondary" href="tel:+40778735007">Sună: 0778 735 007</a>
+    </div>
+
+    <p class="note">Tip: poți trimite și o poză pe WhatsApp după ce trimiți formularul.</p>
+  </form>
 </section>
 
 <div id="about-us-modal" class="modal">
@@ -389,7 +458,7 @@ const translations = {
     'og-description': 'Servicii profesionale de curățare tapițerie în București.',
     'hero-title': 'Curățenie profesională la tine acasă',
     'hero-subtitle': 'Canapele • Saltele • Covoare • Mochete',
-    'hero-call': '📞 Sună acum: 0778 735 007',
+    'hero-call': '📞 Sună acum: +40778735007',
     'services-title': 'Serviciile noastre',
     'service1-title': 'Curățare canapele',
     'service1-chapter1-title': 'Introducere Serviciu',
@@ -759,5 +828,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+<script src="/assets/js/quote-form.js"></script>
 </body>
 </html>
