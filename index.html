@@ -209,6 +209,17 @@ header img {
   height: min(36vh, 300px);
   object-fit: cover;
 }
+.banner-text {
+  position: absolute;
+  left: 24px;
+  top: 24px;
+  max-width: 70%;
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 0 14px rgba(0, 0, 0, 0.85), 0 6px 18px rgba(0, 0, 0, 0.65);
+  text-align: left;
+}
 .header-logo {
   position: absolute;
   right: 24px;
@@ -255,6 +266,21 @@ header img {
   font-weight: bold;
   font-size: 18px;
   box-shadow: 0 5px 20px rgba(0,255,200,0.6);
+}
+.hero .hero-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 25px;
+}
+.hero .hero-actions a {
+  margin-top: 0;
+}
+.hero .whatsapp {
+  background: linear-gradient(90deg, #25D366, #1ebe57);
+  color: #042b17;
+  box-shadow: 0 5px 20px rgba(37, 211, 102, 0.6);
 }
 
 /* SECTIONS */
@@ -476,13 +502,17 @@ footer {
     <button onclick="changeLanguage('en')"><img src="https://www.countryflags.com/wp-content/uploads/united-kingdom-flag-png-large.png" alt="UK Flag"></button>
   </div>
   <img src="banner.png" alt="SkyClean Banner" class="banner-img">
+  <div class="banner-text" data-translate="banner-text">Curățare Profesională cu Tehnologie de Ultimă Generație</div>
   <img src="fara telefon logo.png" alt="SkyClean Logo" id="logo-img" class="header-logo">
 </header>
 
 <div class="hero">
   <h1 data-translate="hero-title">Curățenie profesională la tine acasă</h1>
   <p data-translate="hero-subtitle">Canapele • Saltele • Covoare • Mochete</p>
-  <a href="tel:+40778735007" data-translate="hero-call">📞 Sună acum: +40778735007</a>
+  <div class="hero-actions">
+    <a href="tel:+40778735007" data-translate="hero-call">📞 Sună acum: +40778735007</a>
+    <a href="https://wa.me/40778735007" class="whatsapp" data-translate="hero-whatsapp">💬 WhatsApp</a>
+  </div>
 </div>
 
 <section>
@@ -673,6 +703,7 @@ const translations = {
     'hero-title': 'Curățenie profesională la tine acasă',
     'hero-subtitle': 'Canapele • Saltele • Covoare • Mochete',
     'hero-call': '📞 Sună acum: +40778735007',
+    'banner-text': 'Curățare Profesională cu Tehnologie de Ultimă Generație',
     'services-title': 'Serviciile noastre',
     'service1-title': 'Curățare canapele',
     'service1-chapter1-title': 'Introducere Serviciu',
@@ -792,6 +823,7 @@ const translations = {
     'hero-title': 'Professional cleaning at your home',
     'hero-subtitle': 'Sofas • Mattresses • Rugs • Carpets',
     'hero-call': '📞 Call now: 0778 735 007',
+    'banner-text': 'Professional Cleaning with State-of-the-Art Technology',
     'services-title': 'Our Services',
     'service1-title': 'Sofa Cleaning',
     'service1-chapter1-title': 'Service Introduction',
@@ -860,7 +892,7 @@ const translations = {
 };
 
 function changeLanguage(lang) {
-  document.getElementById('logo-img').src = lang === 'en' ? 'eng logo.png' : 'fara telefon logo.png';
+  document.getElementById('logo-img').src = 'fara telefon logo.png';
   document.documentElement.lang = lang;
   document.title = translations[lang]['page-title'];
 
