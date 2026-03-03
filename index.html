@@ -9,6 +9,143 @@
 <meta property="og:title" content="" id="og-title">
 <meta property="og:description" content="" id="og-description">
 <meta property="og:type" content="website">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CleaningService",
+  "name": "SkyClean",
+  "telephone": "+40778735007",
+  "areaServed": [
+    "Bucharest",
+    "Ilfov",
+    "Otopeni",
+    "Pipera",
+    "Voluntari"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bucharest",
+    "addressCountry": "RO"
+  },
+  "sameAs": [
+    "https://m.facebook.com/profile.php?id=61587752910986",
+    "https://www.instagram.com/skycleanro/"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicii SkyClean",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "priceCurrency": "RON",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Curatare canapele",
+          "serviceType": "Curatare tapiterie"
+        },
+        "priceSpecification": [
+          {
+            "@type": "UnitPriceSpecification",
+            "name": "Canapea 2 locuri",
+            "price": 200
+          },
+          {
+            "@type": "UnitPriceSpecification",
+            "name": "Canapea 3 locuri",
+            "price": 250
+          },
+          {
+            "@type": "UnitPriceSpecification",
+            "name": "Canapea 4 locuri",
+            "price": 300
+          },
+          {
+            "@type": "UnitPriceSpecification",
+            "name": "Fotoliu",
+            "price": 80
+          },
+          {
+            "@type": "UnitPriceSpecification",
+            "name": "Scaun tapitat",
+            "price": 40
+          },
+          {
+            "@type": "UnitPriceSpecification",
+            "name": "Canapea piele 2 locuri",
+            "price": 250
+          },
+          {
+            "@type": "UnitPriceSpecification",
+            "name": "Canapea piele 3 locuri",
+            "price": 300
+          },
+          {
+            "@type": "UnitPriceSpecification",
+            "name": "Fotoliu piele",
+            "price": 120
+          }
+        ]
+      },
+      {
+        "@type": "Offer",
+        "priceCurrency": "RON",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Curatare saltele",
+          "serviceType": "Curatare saltele"
+        },
+        "priceSpecification": [
+          {
+            "@type": "UnitPriceSpecification",
+            "name": "Saltea single (80-90 cm)",
+            "price": 100
+          },
+          {
+            "@type": "UnitPriceSpecification",
+            "name": "Saltea dubla (140 cm)",
+            "price": 150
+          },
+          {
+            "@type": "UnitPriceSpecification",
+            "name": "Saltea king size",
+            "price": 200
+          }
+        ]
+      },
+      {
+        "@type": "Offer",
+        "priceCurrency": "RON",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Curatare covoare",
+          "serviceType": "Curatare covoare"
+        },
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "name": "Covoare",
+          "price": 15,
+          "unitText": "SQM"
+        }
+      },
+      {
+        "@type": "Offer",
+        "priceCurrency": "RON",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Curatare mochete",
+          "serviceType": "Curatare mochete"
+        },
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "name": "Mochete",
+          "price": 15,
+          "unitText": "SQM"
+        }
+      }
+    ]
+  }
+}
+</script>
 
 <style>
 body {
@@ -25,8 +162,8 @@ body.modal-open {
 /* HEADER */
 header {
   text-align: center;
-  padding: 30px 20px;
-  background: black;
+  padding: 0;
+  background: transparent;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   position: relative;
 }
@@ -63,8 +200,31 @@ header {
 }
 
 header img {
-  max-width: 420px;
   width: 100%;
+  height: auto;
+}
+.banner-img {
+  display: block;
+  width: 100%;
+  height: min(36vh, 300px);
+  object-fit: cover;
+}
+.header-logo {
+  position: absolute;
+  right: 24px;
+  bottom: 16px;
+  transform: none;
+  width: 140px;
+  max-width: 30vw;
+  height: auto;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.55));
+  opacity: 0.8;
+}
+@media (max-width: 640px) {
+  .header-logo {
+    right: 14px;
+    width: 100px;
+  }
 }
 
 /* HERO */
@@ -315,7 +475,8 @@ footer {
     <button onclick="changeLanguage('ro')"><img src="https://www.countryflags.com/wp-content/uploads/romania-flag-png-large.png" alt="Romanian Flag"></button>
     <button onclick="changeLanguage('en')"><img src="https://www.countryflags.com/wp-content/uploads/united-kingdom-flag-png-large.png" alt="UK Flag"></button>
   </div>
-  <img src="fara telefon logo.png" alt="SkyClean Logo" id="logo-img">
+  <img src="banner.png" alt="SkyClean Banner" class="banner-img">
+  <img src="fara telefon logo.png" alt="SkyClean Logo" id="logo-img" class="header-logo">
 </header>
 
 <div class="hero">
