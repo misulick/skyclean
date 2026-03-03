@@ -340,6 +340,10 @@ footer {
 }
 
 .social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -355,6 +359,16 @@ footer {
   font-weight: 600;
   transition: background 0.3s ease;
   margin: 0 10px; /* Added margin for spacing */
+}
+.social-links .icon-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.social-links .icon-btn img {
+  width: 20px;
+  height: 20px;
+  display: block;
 }
 
 .fb-button:hover {
@@ -376,6 +390,28 @@ footer {
 
 .ig:hover {
   opacity: 0.8;
+}
+.tt-button {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  transition: opacity 0.3s ease;
+}
+.tt-button:hover {
+  opacity: 0.85;
+}
+.social-links .tiktok-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.tt-button img {
+  filter: invert(1);
 }
 
 /* CALL BUTTON */
@@ -512,6 +548,28 @@ footer {
   <div class="hero-actions">
     <a href="tel:+40778735007" data-translate="hero-call">📞 Sună acum: +40778735007</a>
     <a href="https://wa.me/40778735007" class="whatsapp" data-translate="hero-whatsapp">💬 WhatsApp</a>
+  </div>
+  <div class="social-links">
+    <a href="https://m.facebook.com/profile.php?id=61587752910986"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="fb-button icon-btn">
+      <img src="assets/img/facebook.svg" alt="Facebook">
+      Facebook SkyClean
+    </a>
+    <a href="https://www.instagram.com/skycleanro/"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="btn ig icon-btn">
+     <img src="assets/img/instagram.png" alt="Instagram">
+     Instagram SkyClean
+  </a>
+    <div class="tiktok-wrap">
+      <a href="https://www.tiktok.com/@skycleanro" target="_blank" rel="noopener noreferrer" class="tt-button icon-btn">
+        <img src="assets/img/tiktok.svg" alt="TikTok">
+        TikTok SkyClean
+      </a>
+    </div>
   </div>
 </div>
 
@@ -679,15 +737,23 @@ footer {
     <a href="https://m.facebook.com/profile.php?id=61587752910986"
        target="_blank"
        rel="noopener noreferrer"
-       class="fb-button">
+       class="fb-button icon-btn">
+      <img src="assets/img/facebook.svg" alt="Facebook">
       Facebook SkyClean
     </a>
     <a href="https://www.instagram.com/skycleanro/"
      target="_blank"
      rel="noopener noreferrer"
-     class="btn ig">
+     class="btn ig icon-btn">
+     <img src="assets/img/instagram.png" alt="Instagram">
      Instagram SkyClean
   </a>
+    <div class="tiktok-wrap">
+      <a href="https://www.tiktok.com/@skycleanro" target="_blank" rel="noopener noreferrer" class="tt-button icon-btn">
+        <img src="assets/img/tiktok.svg" alt="TikTok">
+        TikTok SkyClean
+      </a>
+    </div>
   </div>
   <p data-translate="footer-copyright">© SkyClean – Curățenie la nivel înalt</p>
 </footer>
