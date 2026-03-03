@@ -84,7 +84,7 @@ header img {
   opacity: 0.9;
 }
 
-.hero a {
+.hero a, .btn-primary {
   display: inline-block;
   margin-top: 25px;
   background: linear-gradient(90deg, #00c6ff, #00ff99);
@@ -95,6 +95,14 @@ header img {
   font-weight: bold;
   font-size: 18px;
   box-shadow: 0 5px 20px rgba(0,255,200,0.6);
+  border: none;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0,255,200,0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(0,255,200,0); }
+  100% { box-shadow: 0 0 0 0 rgba(0,255,200,0); }
 }
 
 /* SECTIONS */
@@ -280,9 +288,14 @@ footer {
 </header>
 
 <div class="hero">
-  <h1 data-translate="hero-title">Curățenie profesională la tine acasă</h1>
-  <p data-translate="hero-subtitle">Canapele • Saltele • Covoare • Mochete</p>
-  <a href="tel:+40778735007" data-translate="hero-call">📞 Sună acum: +40778735007</a>
+  <h1 data-translate="hero-title">Curățare canapele, saltele și covoare în București</h1>
+  <p style="font-size:20px; margin-top:15px;" data-translate="hero-subtitle1">Tehnologie profesională Alltec • Curățare în profunzime reală</p>
+  <p style="margin-top:10px; opacity:0.9;" data-translate="hero-subtitle2">Prețuri transparente • Programări rapide în 24h</p>
+  <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 25px;">
+    <a href="tel:+40778735007" data-translate="hero-call" style="margin-top: 0;">📞 Sună acum: 0778 735 007</a>
+    <a href="https://wa.me/40778735007" data-translate="hero-whatsapp" style="margin-top: 0; background: linear-gradient(90deg, #25D366, #128C7E); box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4); color: white;">💬 Cere ofertă pe WhatsApp</a>
+  </div>
+</div>
 </div>
 
 <section>
@@ -324,6 +337,64 @@ footer {
   </div>
   <div class="about-us-card" id="price-list-button">
     <h3 data-translate="price-list">Lista de preturi</h3>
+  </div>
+</section>
+
+<section id="why-us">
+  <h2 data-translate="why-us-title">De ce SkyClean</h2>
+
+  <div class="services">
+    <div class="card" style="cursor: default;">
+      <div style="padding: 25px;">
+        <h3 data-translate="why-us-1-title">🔬 Tehnologie profesională</h3>
+        <p data-translate="why-us-1-text">Folosim echipamente industriale Alltec, nu aparate comerciale standard.</p>
+      </div>
+    </div>
+
+    <div class="card" style="cursor: default;">
+      <div style="padding: 25px;">
+        <h3 data-translate="why-us-2-title">🧪 Detergenți dedicați</h3>
+        <p data-translate="why-us-2-text">Soluții profesionale adaptate fiecărui tip de material.</p>
+      </div>
+    </div>
+
+    <div class="card" style="cursor: default;">
+      <div style="padding: 25px;">
+        <h3 data-translate="why-us-3-title">⏱ Uscare rapidă</h3>
+        <p data-translate="why-us-3-text">Extracție puternică pentru rezultate vizibile și timp redus de uscare.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" style="text-align: center;">
+  <h2 data-translate="pricing-title">Prețuri transparente</h2>
+
+  <div class="card" style="padding:30px; max-width: 600px; margin: auto;">
+    <h3 style="color:#00ffcc;" data-translate="pricing-upholstery-title">Curățare Canapele</h3>
+    <p data-translate="pricing-upholstery-prices">
+      2 locuri – 200 RON<br>
+      3 locuri – 250 RON<br>
+      4 locuri – 300 RON
+    </p>
+
+    <h3 style="color:#00ffcc; margin-top:20px;" data-translate="pricing-mattress-title">Curățare Saltele</h3>
+    <p data-translate="pricing-mattress-prices">
+      Single – 100 RON<br>
+      Dublă – 150 RON<br>
+      King – 200 RON
+    </p>
+
+    <h3 style="color:#00ffcc; margin-top:20px;" data-translate="pricing-carpet-title">Covoare / Mochete</h3>
+    <p data-translate="pricing-carpet-prices">15 RON / mp</p>
+
+    <p style="margin-top:20px; font-size:14px; opacity: 0.8;" data-translate="pricing-note">
+      *Deplasare gratuită pentru comenzi peste 200 RON
+    </p>
+
+    <a href="tel:+40778735007" class="btn-primary" style="margin-top:20px;" data-translate="pricing-cta">
+      📞 Programează acum
+    </a>
   </div>
 </section>
 
@@ -456,9 +527,11 @@ const translations = {
     'page-title': 'SkyClean – Curățenie la nivel înalt',
     'og-title': 'Curățenie canapele București | SkyClean',
     'og-description': 'Servicii profesionale de curățare tapițerie în București.',
-    'hero-title': 'Curățenie profesională la tine acasă',
-    'hero-subtitle': 'Canapele • Saltele • Covoare • Mochete',
-    'hero-call': '📞 Sună acum: +40778735007',
+    'hero-title': 'Curățare canapele, saltele și covoare în București',
+    'hero-subtitle1': 'Tehnologie profesională Alltec • Curățare în profunzime reală',
+    'hero-subtitle2': 'Prețuri transparente • Programări rapide în 24h',
+    'hero-call': '📞 Sună acum: 0778 735 007',
+    'hero-whatsapp': '💬 Cere ofertă pe WhatsApp',
     'services-title': 'Serviciile noastre',
     'service1-title': 'Curățare canapele',
     'service1-chapter1-title': 'Introducere Serviciu',
@@ -509,6 +582,22 @@ const translations = {
     'fab-call': 'Sună acum',
     'about-us': 'Despre noi',
     'about-us-title': 'Despre noi',
+    'pricing-title': 'Prețuri transparente',
+    'pricing-upholstery-title': 'Curățare Canapele',
+    'pricing-upholstery-prices': '2 locuri – 200 RON<br>3 locuri – 250 RON<br>4 locuri – 300 RON',
+    'pricing-mattress-title': 'Curățare Saltele',
+    'pricing-mattress-prices': 'Single – 100 RON<br>Dublă – 150 RON<br>King – 200 RON',
+    'pricing-carpet-title': 'Covoare / Mochete',
+    'pricing-carpet-prices': '15 RON / mp',
+    'pricing-note': '*Deplasare gratuită pentru comenzi peste 200 RON',
+    'pricing-cta': '📞 Programează acum',
+    'why-us-title': 'De ce SkyClean',
+    'why-us-1-title': '🔬 Tehnologie profesională',
+    'why-us-1-text': 'Folosim echipamente industriale Alltec, nu aparate comerciale standard.',
+    'why-us-2-title': '🧪 Detergenți dedicați',
+    'why-us-2-text': 'Soluții profesionale adaptate fiecărui tip de material.',
+    'why-us-3-title': '⏱ Uscare rapidă',
+    'why-us-3-text': 'Extracție puternică pentru rezultate vizibile și timp redus de uscare.',
     'about-us-chapter1-title': 'Tehnologie Profesională de Top',
     'about-us-chapter1-p1': 'La SkyClean, standardele ridicate de curățenie sunt susținute de tehnologie profesională de top și proceduri avansate de lucru. Investim constant în echipamente performante pentru a oferi rezultate superioare în curățarea covoarelor, mochetelor, saltelelor și tapițeriilor.',
     'about-us-chapter2-title': 'Echipament de Înaltă Performanță: Advance 600',
@@ -575,9 +664,11 @@ const translations = {
     'page-title': 'SkyClean – High-level cleaning',
     'og-title': 'Upholstery Cleaning Bucharest | SkyClean',
     'og-description': 'Professional sofa, mattress and carpet cleaning services in Bucharest.',
-    'hero-title': 'Professional cleaning at your home',
-    'hero-subtitle': 'Sofas • Mattresses • Rugs • Carpets',
+    'hero-title': 'Sofa, mattress and carpet cleaning in Bucharest',
+    'hero-subtitle1': 'Professional Alltec technology • Real deep cleaning',
+    'hero-subtitle2': 'Transparent prices • Fast appointments in 24h',
     'hero-call': '📞 Call now: 0778 735 007',
+    'hero-whatsapp': '💬 Get a quote on WhatsApp',
     'services-title': 'Our Services',
     'service1-title': 'Sofa Cleaning',
     'service1-chapter1-title': 'Service Introduction',
@@ -630,6 +721,22 @@ const translations = {
     'fab-call': 'Call Now',
     'about-us': 'About Us',
     'about-us-title': 'About Us',
+    'pricing-title': 'Transparent pricing',
+    'pricing-upholstery-title': 'Sofa Cleaning',
+    'pricing-upholstery-prices': '2 seats – 200 RON<br>3 seats – 250 RON<br>4 seats – 300 RON',
+    'pricing-mattress-title': 'Mattress Cleaning',
+    'pricing-mattress-prices': 'Single – 100 RON<br>Double – 150 RON<br>King – 200 RON',
+    'pricing-carpet-title': 'Rugs / Carpets',
+    'pricing-carpet-prices': '15 RON / sqm',
+    'pricing-note': '*Free travel for orders over 200 RON',
+    'pricing-cta': '📞 Schedule now',
+    'why-us-title': 'Why SkyClean',
+    'why-us-1-title': '🔬 Professional Technology',
+    'why-us-1-text': 'We use industrial Alltec equipment, not standard commercial devices.',
+    'why-us-2-title': '🧪 Dedicated Detergents',
+    'why-us-2-text': 'Professional solutions adapted to each type of material.',
+    'why-us-3-title': '⏱ Fast Drying',
+    'why-us-3-text': 'Powerful extraction for visible results and reduced drying time.',
     'about-us-chapter1-title': 'Top Professional Technology',
     'about-us-chapter1-p1': 'At SkyClean, high cleaning standards are supported by top professional technology and advanced working procedures. We constantly invest in high-performance equipment to provide superior results in cleaning rugs, Carpets, mattresses, and upholstery.',
     'about-us-chapter2-title': 'High-Performance Equipment: Advance 600',
