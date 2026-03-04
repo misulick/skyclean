@@ -826,6 +826,8 @@ const translations = {
     'hero-subtitle': 'Canapele • Saltele • Covoare • Mochete',
     'hero-call': '📞 Sună acum: +40778735007',
     'banner-text': 'Curățare Profesională cu Tehnologie de Ultimă Generație',
+    'banner-text-2': 'Pete Dificile? Noi Le Eliminăm.',
+    'banner-text-3': 'Și covorul tău poate arăta ca nou',
     'services-title': 'Serviciile noastre',
     'service1-title': 'Curățare canapele',
     'service1-chapter1-title': 'Introducere Serviciu',
@@ -946,6 +948,8 @@ const translations = {
     'hero-subtitle': 'Sofas • Mattresses • Rugs • Carpets',
     'hero-call': '📞 Call now: 0778 735 007',
     'banner-text': 'Professional Cleaning with State-of-the-Art Technology',
+    'banner-text-2': 'Tough Stains? We Remove Them.',
+    'banner-text-3': 'Your rug can also look like new',
     'services-title': 'Our Services',
     'service1-title': 'Sofa Cleaning',
     'service1-chapter1-title': 'Service Introduction',
@@ -1095,7 +1099,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const bannerImg = document.getElementById('banner-img');
   const bannerText = document.querySelector('.banner-text');
   const bannerPatches = document.querySelectorAll('.banner-patch');
-  const bannerImages = ['banner.png', 'banner_skyclean_1920x924.png'];
+  const bannerImages = ['banner.png', 'banner_skyclean_1920x924.png', 'banner 3.png', 'bannercovor5.png'];
   let bannerIndex = 0;
 
   if (bannerImg) {
@@ -1105,10 +1109,22 @@ document.addEventListener('DOMContentLoaded', () => {
       if (bannerText) bannerText.style.opacity = '0';
       bannerPatches.forEach(p => p.style.opacity = '0');
       setTimeout(() => {
+        const lang = document.documentElement.lang || 'ro';
         bannerImg.src = bannerImages[bannerIndex];
         bannerImg.classList.remove('fade');
         if (bannerText) {
-          bannerText.style.opacity = (bannerIndex === 0) ? '1' : '0';
+          if (bannerIndex === 0) {
+            bannerText.textContent = translations[lang]['banner-text'];
+            bannerText.style.opacity = '1';
+          } else if (bannerIndex === 2) {
+            bannerText.textContent = translations[lang]['banner-text-2'];
+            bannerText.style.opacity = '1';
+          } else if (bannerIndex === 3) {
+            bannerText.textContent = translations[lang]['banner-text-3'];
+            bannerText.style.opacity = '1';
+          } else {
+            bannerText.style.opacity = '0';
+          }
         }
         // Ensure patches remain hidden on the second banner
         bannerPatches.forEach(p => p.style.opacity = '0');
