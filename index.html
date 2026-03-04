@@ -208,6 +208,10 @@ header img {
   width: 100%;
   height: min(36vh, 300px);
   object-fit: cover;
+  transition: opacity 0.6s ease;
+}
+.banner-img.fade {
+  opacity: 0;
 }
 .banner-text {
   position: absolute;
@@ -542,7 +546,7 @@ footer {
     <button onclick="changeLanguage('ro')"><img src="https://www.countryflags.com/wp-content/uploads/romania-flag-png-large.png" alt="Romanian Flag"></button>
     <button onclick="changeLanguage('en')"><img src="https://www.countryflags.com/wp-content/uploads/united-kingdom-flag-png-large.png" alt="UK Flag"></button>
   </div>
-  <img src="banner.png" alt="SkyClean Banner" class="banner-img">
+  <img src="banner.png" alt="SkyClean Banner" class="banner-img" id="banner-img">
   <div class="banner-text" data-translate="banner-text">Curățare Profesională cu Tehnologie de Ultimă Generație</div>
   <img src="fara telefon logo.png" alt="SkyClean Logo" id="logo-img" class="header-logo">
 </header>
@@ -1044,6 +1048,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const serviceModalImg = document.getElementById('service-modal-img');
   const serviceModalTitle = document.getElementById('service-modal-title');
   const serviceModalTextContent = document.getElementById('service-modal-text-content'); // New element to populate
+  const bannerImg = document.getElementById('banner-img');
+  const bannerImages = ['banner.png', 'banner_skyclean_1920x924.png'];
+  let bannerIndex = 0;
+
+  if (bannerImg) {
+    setInterval(() => {
+      bannerIndex = (bannerIndex + 1) % bannerImages.length;
+      bannerImg.classList.add('fade');
+      setTimeout(() => {
+        bannerImg.src = bannerImages[bannerIndex];
+        bannerImg.classList.remove('fade');
+      }, 300);
+    }, 6000);
+  }
 
   for (let card of serviceCards) {
     card.onclick = function() {
