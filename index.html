@@ -5,8 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SkyClean – Curățenie la nivel înalt</title>
 
-<!-- Open Graph Meta Tags -->
-<meta property="og:title" content="" id="og-title">
+<script type="text/javascript">
+  window._mfq = window._mfq || [];
+  (function() {
+    var mf = document.createElement("script");
+    mf.type = "text/javascript"; mf.defer = true;
+    mf.src = "//cdn.mouseflow.com/projects/1be01355-121a-4139-84e8-7ca7282e24bb.js";
+    document.getElementsByTagName("head")[0].appendChild(mf);
+  })();
+</script>
+
+<!-- Open Graph Meta Tags --><meta property="og:title" content="" id="og-title">
 <meta property="og:description" content="" id="og-description">
 <meta property="og:type" content="website">
 <script type="application/ld+json">
@@ -557,6 +566,8 @@ footer {
     <button onclick="changeLanguage('en')"><img src="https://www.countryflags.com/wp-content/uploads/united-kingdom-flag-png-large.png" alt="UK Flag"></button>
   </div>
   <img src="banner.png" alt="SkyClean Banner" class="banner-img" id="banner-img">
+  <div class="banner-patch patch-bottom-left"></div>
+  <div class="banner-patch patch-center-left"></div>
   <div class="banner-text" data-translate="banner-text">Curățare Profesională cu Tehnologie de Ultimă Generație</div>
   <img src="fara telefon logo.png" alt="SkyClean Logo" id="logo-img" class="header-logo">
 </header>
@@ -1060,6 +1071,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const serviceModalTextContent = document.getElementById('service-modal-text-content'); // New element to populate
   const bannerImg = document.getElementById('banner-img');
   const bannerText = document.querySelector('.banner-text');
+  const bannerPatches = document.querySelectorAll('.banner-patch');
   const bannerImages = ['banner.png', 'banner_skyclean_1920x924.png'];
   let bannerIndex = 0;
 
@@ -1068,11 +1080,15 @@ document.addEventListener('DOMContentLoaded', () => {
       bannerIndex = (bannerIndex + 1) % bannerImages.length;
       bannerImg.classList.add('fade');
       if (bannerText) bannerText.style.opacity = '0';
+      bannerPatches.forEach(p => p.style.opacity = '0');
       setTimeout(() => {
         bannerImg.src = bannerImages[bannerIndex];
         bannerImg.classList.remove('fade');
         if (bannerText) {
           bannerText.style.opacity = (bannerIndex === 0) ? '1' : '0';
+        }
+        if (bannerIndex === 1) {
+          bannerPatches.forEach(p => p.style.opacity = '1');
         }
       }, 300);
     }, 6000);
