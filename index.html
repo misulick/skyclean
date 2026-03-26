@@ -517,6 +517,24 @@ footer {
   text-decoration: none;
   font-weight: bold;
   box-shadow: 0 6px 20px rgba(0,255,200,0.7);
+  z-index: 1000;
+  transition: transform 0.2s;
+}
+
+@media (max-width: 767px) {
+  .call {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    text-align: center;
+    font-size: 20px;
+    padding: 18px;
+    border-radius: 15px;
+    background: #e63946; /* Strong contrast red */
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transform: none;
+  }
 }
 
 /* Modal styles */
@@ -714,8 +732,8 @@ footer {
   <p data-translate="hero-subtitle">Spălare profesională la domiciliu. Eliminăm petele și mirosurile rapid.</p>
   <p style="font-weight: bold; color: #7CFFB2; font-size: 20px; margin-top: 10px;">🔥 Programări rapide • București & Ilfov • Sună acum pentru ofertă</p>
   <div class="hero-actions">
-    <a href="tel:+40778735007" data-translate="hero-call">📞 Sună acum: +40778735007</a>
-    <a href="https://wa.me/40778735007" class="whatsapp icon-btn" data-translate="hero-whatsapp">
+    <a href="tel:+40778735007" onclick="gtag('event', 'conversion', {'send_to': 'AW-17962070059/apel'});" data-translate="hero-call">📞 Sună acum: +40778735007</a>
+    <a href="https://wa.me/40778735007" onclick="gtag('event', 'conversion', {'send_to': 'AW-17962070059/whatsapp'});" class="whatsapp icon-btn" data-translate="hero-whatsapp">
       <img src="assets/img/whatsapp.svg" alt="WhatsApp">
       WhatsApp
     </a>
@@ -733,12 +751,6 @@ footer {
 </section>
 
 <section>
-  <div class="about-us-card" id="price-list-button">
-    <h3 data-translate="price-list">Lista de preturi</h3>
-  </div>
-  <div class="about-us-card" id="about-us-button">
-    <h3 data-translate="about-us">Despre noi</h3>
-  </div>
   <h2 data-translate="services-title">Serviciile noastre</h2>
 
   <div class="services">
@@ -838,7 +850,7 @@ footer {
 
     <div class="actions">
       <button type="submit">Trimite cererea pe WhatsApp</button>
-      <a class="btn secondary" href="tel:+40778735007">Sună: 0778 735 007</a>
+      <a class="btn secondary" href="tel:+40778735007" onclick="gtag('event', 'conversion', {'send_to': 'AW-17962070059/apel'});">Sună: 0778 735 007</a>
     </div>
 
     <p class="note">Tip: poți trimite și o poză pe WhatsApp după ce trimiți formularul.</p>
@@ -920,7 +932,7 @@ footer {
   <p data-translate="footer-copyright">© SkyClean – Curățenie la nivel înalt</p>
 </footer>
 
-<a class="call" href="tel:+40778735007" data-translate="fab-call">Sună acum</a>
+<a class="call" href="tel:+40778735007" onclick="gtag('event', 'conversion', {'send_to': 'AW-17962070059/apel'});" data-translate="fab-call">Sună acum</a>
 
 <script>
 const translations = {
@@ -981,7 +993,7 @@ const translations = {
     'service4-chapter4-title': 'Partenerul Tău de Încredere pentru Curățenia Mochetelor',
     'service4-chapter4-p1': 'Alege SkyClean pentru curățarea profesională a mochetelor în București și împrejurimi – un partener de încredere pentru birouri, hoteluri și spații comerciale care pun accent pe calitate și imagine.',
     'footer-copyright': '© SkyClean – Curățenie la nivel înalt',
-    'fab-call': 'Sună acum',
+    'fab-call': '📞 Sună acum',
     'about-us': 'Despre noi',
     'about-us-title': 'Despre noi',
     'about-us-chapter1-title': 'Tehnologie Profesională de Top',
