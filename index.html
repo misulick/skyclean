@@ -348,6 +348,32 @@ header img {
   display: block;
 }
 
+/* BENEFITS SECTION */
+.benefits-section {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 40px 20px;
+  text-align: center;
+}
+.benefits-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  max-width: 1200px;
+  margin: 30px auto 0;
+}
+.benefit-item {
+  background: #062a45;
+  border: 1px solid #7CFFB2;
+  padding: 15px;
+  border-radius: 12px;
+  font-weight: 600;
+  color: #7CFFB2;
+  flex: 1 1 220px;
+  max-width: 280px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
 /* SECTIONS */
 section {
   padding: 60px 20px;
@@ -683,9 +709,10 @@ footer {
 </header>
 
 <div class="hero">
-  <h1 data-translate="hero-title">Curățenie profesională la tine acasă</h1>
+  <h1 data-translate="hero-title">Curățare Canapele, Saltele și Mochete în București</h1>
   <p style="font-weight: bold; color: #7CFFB2; font-size: 20px; margin-bottom: 10px;">🔥 Reducere 20% până pe 10 Aprilie<br>+ 10% extra pentru comenzi peste 500 lei</p>
-  <p data-translate="hero-subtitle">Canapele • Saltele • Covoare • Mochete</p>
+  <p data-translate="hero-subtitle">Spălare profesională la domiciliu. Eliminăm petele și mirosurile rapid.</p>
+  <p style="font-weight: bold; color: #7CFFB2; font-size: 20px; margin-top: 10px;">🔥 Programări rapide • București & Ilfov • Sună acum pentru ofertă</p>
   <div class="hero-actions">
     <a href="tel:+40778735007" data-translate="hero-call">📞 Sună acum: +40778735007</a>
     <a href="https://wa.me/40778735007" class="whatsapp icon-btn" data-translate="hero-whatsapp">
@@ -693,29 +720,17 @@ footer {
       WhatsApp
     </a>
   </div>
-  <div class="social-links">
-    <a href="https://m.facebook.com/profile.php?id=61587752910986"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="fb-button icon-btn">
-      <img src="assets/img/facebook.svg" alt="Facebook">
-      Facebook SkyClean
-    </a>
-    <a href="https://www.instagram.com/skycleanro/"
-     target="_blank"
-     rel="noopener noreferrer"
-     class="btn ig icon-btn">
-     <img src="assets/img/instagram.png" alt="Instagram">
-     Instagram SkyClean
-  </a>
-    <div class="tiktok-wrap">
-      <a href="https://www.tiktok.com/@skycleanro" target="_blank" rel="noopener noreferrer" class="tt-button icon-btn">
-        <img src="assets/img/tiktok.svg" alt="TikTok">
-        TikTok SkyClean
-      </a>
-    </div>
-  </div>
 </div>
+
+<section class="benefits-section">
+  <h2>De ce aleg clienții SkyClean</h2>
+  <div class="benefits-grid">
+    <div class="benefit-item">✔ Venim direct la domiciliu</div>
+    <div class="benefit-item">✔ Eliminăm pete și mirosuri</div>
+    <div class="benefit-item">✔ Programări rapide în București & Ilfov</div>
+    <div class="benefit-item">✔ Echipamente profesionale</div>
+  </div>
+</section>
 
 <section>
   <div class="about-us-card" id="price-list-button">
@@ -757,11 +772,12 @@ footer {
     </div>
 
   </div>
+  <p style="text-align: center; margin-top: 20px; font-style: italic; opacity: 0.9;">Serviciile pentru covoare sunt realizate la domiciliu.</p>
 </section>
 
 <section id="oferta" class="quote" style="display: none;">
-  <h2>Cere ofertă rapidă</h2>
-  <p>Completează 30 secunde și îți răspundem rapid (apel / WhatsApp).</p>
+  <h2>Cere ofertă rapidă sau sună acum</h2>
+  <p>Completează formularul în 30 secunde sau sună direct pentru programare rapidă.</p>
 
   <form id="quoteForm">
     <div class="grid">
@@ -786,7 +802,7 @@ footer {
           <option value="">Alege serviciul</option>
           <option>Curățare canapea / colțar</option>
           <option>Curățare saltea</option>
-          <option>Curățare covor</option>
+          <option>Curățare covor (la domiciliu)</option>
           <option>Curățare mochetă</option>
           <option>Scaune / fotolii</option>
           <option>Altceva</option>
@@ -818,8 +834,10 @@ footer {
       Sunt de acord să fiu contactat(ă) pentru ofertă.
     </label><br>
 
+    <p style="font-weight: bold; color: #7CFFB2; margin-bottom: 15px;">📞 Pentru răspuns mai rapid, sună direct la 0778 735 007</p>
+
     <div class="actions">
-      <button type="submit">Trimite pe WhatsApp</button>
+      <button type="submit">Trimite cererea pe WhatsApp</button>
       <a class="btn secondary" href="tel:+40778735007">Sună: 0778 735 007</a>
     </div>
 
@@ -910,8 +928,8 @@ const translations = {
     'page-title': 'SkyClean – Curățenie la nivel înalt',
     'og-title': 'Curățenie canapele București | SkyClean',
     'og-description': 'Servicii profesionale de curățare tapițerie în București.',
-    'hero-title': 'Curățenie profesională la tine acasă',
-    'hero-subtitle': 'Canapele • Saltele • Covoare • Mochete',
+    'hero-title': 'Curățare Canapele, Saltele și Mochete în București',
+    'hero-subtitle': 'Spălare profesională la domiciliu. Eliminăm petele și mirosurile rapid.',
     'hero-call': '📞 Sună acum: +40778735007',
     'banner-text': 'Curățare Profesională cu Tehnologie de Ultimă Generație',
     'banner-text-2': 'Pete Dificile? Noi Le Eliminăm.',
@@ -944,8 +962,8 @@ const translations = {
     'service2-chapter4-list': '<ul><li>✔ Curățare saltele pe ambele fețe</li><li>✔ Eliminare acarieni, bacterii și alergeni</li><li>✔ Îndepărtare pete și mirosuri neplăcute</li><li>✔ Intervenții rapide în București și împrejurimi</li></ul>',
     'service2-chapter5-title': 'Concluzie',
     'service2-chapter5-p1': 'Alege curățarea profesională a saltelei la domiciliu în București și bucură-te de un mediu curat, igienizat și un somn mai odihnitor.',
-    'service3-title': 'Curățare covoare',
-    'service3-chapter1-title': 'Curățare Profesională Covoare',
+    'service3-title': 'Curățare covoare (la domiciliu)',
+    'service3-chapter1-title': 'Curățare Profesională Covoare (la domiciliu)',
     'service3-chapter1-p1': 'SkyClean oferă servicii de curățare profesională a covoarelor, adaptate atât pentru locuințe private, cât și pentru birouri, sedii de firmă și spații comerciale.',
     'service3-chapter2-title': 'Eficiență în Profunzime și Protecția Fibrelor',
     'service3-chapter2-p1': 'Procedurile noastre asigură o curățare eficientă în profunzime, fără a afecta culorile, textura sau structura fibrelor, chiar și în cazul covoarelor utilizate intens. Îndepărtăm petele persistente, murdăria acumulată, bacteriile și alergenii, redând covoarelor un aspect curat și împrospătat.',
@@ -1006,7 +1024,7 @@ const translations = {
         Curățare pe ambele fețe, unde este posibil.
       </p>
       <hr>
-      <h3>CURĂȚARE COVOARE</h3>
+      <h3>CURĂȚARE COVOARE (la domiciliu)</h3>
       <p>
         Covoare 15RON/MP
       </p>
