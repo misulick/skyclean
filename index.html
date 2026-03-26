@@ -374,6 +374,60 @@ header img {
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
+/* CORPORATE SECTION */
+.corporate-section {
+  background: rgba(124, 255, 178, 0.05); /* Light green tint for contrast */
+  padding: 60px 20px;
+  text-align: center;
+  border-top: 1px solid rgba(124, 255, 178, 0.1);
+  border-bottom: 1px solid rgba(124, 255, 178, 0.1);
+}
+.corporate-section h2 {
+  color: #7CFFB2;
+  margin-bottom: 20px;
+}
+.corporate-section p {
+  max-width: 800px;
+  margin: 0 auto 25px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+.corporate-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto;
+  display: inline-block;
+  text-align: left;
+}
+.corporate-list li {
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 17px;
+}
+.corporate-highlight {
+  display: block;
+  margin: 25px 0;
+  font-weight: bold;
+  color: #7CFFB2;
+  font-size: 19px;
+}
+.btn-corporate {
+  display: inline-block;
+  background: #7CFFB2;
+  color: #041c32;
+  padding: 15px 35px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 15px rgba(124, 255, 178, 0.3);
+}
+.btn-corporate:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(124, 255, 178, 0.5);
+}
+
 /* SECTIONS */
 section {
   padding: 60px 20px;
@@ -770,6 +824,21 @@ footer {
     <div class="benefit-item">✔ Programări rapide în București & Ilfov</div>
     <div class="benefit-item">✔ Echipamente profesionale</div>
   </div>
+</section>
+
+<section class="corporate-section">
+  <h2>Curățenie fără întreruperea activității</h2>
+  <p>Pentru birouri și spații comerciale, intervenim în weekend sau în afara orelor de program, astfel încât activitatea să nu fie afectată.</p>
+  
+  <ul class="corporate-list">
+    <li>✔ Intervenții în weekend pentru companii</li>
+    <li>✔ Fără întreruperea activității</li>
+    <li>✔ Oferte personalizate corporate</li>
+  </ul>
+  
+  <span class="corporate-highlight">🏢 Ideal pentru birouri, firme și spații comerciale din București & Ilfov</span>
+  
+  <a href="tel:+40778735007" onclick="gtag('event', 'conversion', {'send_to': 'AW-17962070059/apel'});" class="btn-corporate">📞 Sună pentru ofertă corporate</a>
 </section>
 
 <section>
