@@ -850,6 +850,49 @@ footer {
 .btn-price-call:hover {
   transform: scale(1.05);
 }
+
+/* TESTIMONIALS SECTION */
+.testimonials-section {
+  padding: 60px 20px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-bottom: 30px;
+}
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  border: 1px solid rgba(124, 255, 178, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+.testimonial-text {
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #fff;
+}
+.testimonial-author {
+  font-weight: bold;
+  color: #7CFFB2;
+  font-size: 15px;
+}
+.testimonial-footer {
+  font-weight: bold;
+  color: #7CFFB2;
+  font-size: 19px;
+  margin-top: 20px;
+}
 </style>
 <link rel="stylesheet" href="/assets/css/quote-form.css">
 </head>
@@ -920,6 +963,29 @@ footer {
   <p class="price-note" data-translate="price-note">Prețurile nu variaza în funcție de gradul de murdărie.SUNT FIXE !!!</p>
 
   <a href="tel:+40778735007" onclick="gtag('event', 'conversion', {'send_to': 'AW-17962070059/apel'});" class="btn-price-call" data-translate="price-call">📞 Sună pentru ofertă exactă</a>
+</section>
+
+<section class="testimonials-section">
+  <h2 data-translate="testimonials-title">Clienții noștri spun</h2>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <p class="testimonial-text" data-translate="testimonial1-text">"Canapeaua arată ca nouă. Au venit rapid și au scos toate petele."</p>
+      <span class="testimonial-author" data-translate="testimonial1-author">– Client București</span>
+    </div>
+    <div class="testimonial-card">
+      <p class="testimonial-text" data-translate="testimonial2-text">"Foarte serioși, au lucrat curat și eficient. Recomand."</p>
+      <span class="testimonial-author" data-translate="testimonial2-author">– Client Ilfov</span>
+    </div>
+    <div class="testimonial-card">
+      <p class="testimonial-text" data-translate="testimonial3-text">"Rezultatul a fost peste așteptări. O să mai apelez la ei."</p>
+      <span class="testimonial-author" data-translate="testimonial3-author">– Client București</span>
+    </div>
+    <div class="testimonial-card">
+      <p class="testimonial-text" data-translate="testimonial4-text">"Servicii de nota 10. Mi-au curățat mocheta de la birou și arată impecabil."</p>
+      <span class="testimonial-author" data-translate="testimonial4-author">– Client București</span>
+    </div>
+  </div>
+  <p class="testimonial-footer" data-translate="testimonial-footer">✔ Intervenții zilnice în București & Ilfov</p>
 </section>
 
 <section class="corporate-section">
@@ -1200,6 +1266,16 @@ const translations = {
     'price-card4-value': 'de la 15 lei/mp',
     'price-note': 'Prețurile nu variaza în funcție de gradul de murdărie.SUNT FIXE !!!',
     'price-call': '📞 Sună pentru ofertă exactă',
+    'testimonials-title': 'Clienții noștri spun',
+    'testimonial1-text': '"Canapeaua arată ca nouă. Au venit rapid și au scos toate petele."',
+    'testimonial1-author': '– Client București',
+    'testimonial2-text': '"Foarte serioși, au lucrat curat și eficient. Recomand."',
+    'testimonial2-author': '– Client Ilfov',
+    'testimonial3-text': '"Rezultatul a fost peste așteptări. O să mai apelez la ei."',
+    'testimonial3-author': '– Client București',
+    'testimonial4-text': '"Servicii de nota 10. Mi-au curățat mocheta de la birou și arată impecabil."',
+    'testimonial4-author': '– Client București',
+    'testimonial-footer': '✔ Intervenții zilnice în București & Ilfov',
     'footer-copyright': '© SkyClean – Curățenie la nivel înalt',
     'fab-call': '📞 Sună acum',
     'about-us': 'Despre noi',
@@ -1336,6 +1412,16 @@ const translations = {
     'price-card4-value': 'from 15 lei/sqm',
     'price-note': 'Prices do not vary depending on the level of dirt. THEY ARE FIXED !!!',
     'price-call': '📞 Call for exact offer',
+    'testimonials-title': 'Our clients say',
+    'testimonial1-text': '"The sofa looks like new. They came quickly and removed all stains."',
+    'testimonial1-author': '– Bucharest Client',
+    'testimonial2-text': '"Very serious, they worked clean and efficiently. I recommend them."',
+    'testimonial2-author': '– Ilfov Client',
+    'testimonial3-text': '"The result was beyond expectations. I will call them again."',
+    'testimonial3-author': '– Bucharest Client',
+    'testimonial4-text': '"Top notch services. They cleaned my office carpet and it looks impeccable."',
+    'testimonial4-author': '– Bucharest Client',
+    'testimonial-footer': '✔ Daily interventions in Bucharest & Ilfov',
     'footer-copyright': '© SkyClean – High-level cleaning',
     'fab-call': 'Call Now',
     'about-us': 'About Us',
