@@ -164,20 +164,6 @@ body {
   color: #fff;
 }
 
-.promo-banner {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #e63946;
-  color: white;
-  text-align: center;
-  padding: 10px;
-  font-weight: bold;
-  z-index: 9999;
-  box-sizing: border-box;
-}
-
 body.modal-open {
   overflow: hidden;
 }
@@ -712,77 +698,6 @@ footer {
   font-size: 24px;
 }
 
-/* PROMO POP-UP */
-.promo-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.7);
-  z-index: 10000;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-.promo-modal {
-  background: white;
-  padding: 30px;
-  border-radius: 20px;
-  max-width: 450px;
-  width: 100%;
-  text-align: center;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-  color: #333;
-  position: relative;
-  animation: popIn 0.4s ease-out;
-}
-@keyframes popIn {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-.promo-modal h2 {
-  color: #e63946;
-  margin-top: 0;
-  font-size: 26px;
-  margin-bottom: 15px;
-}
-.promo-modal p {
-  font-size: 18px;
-  line-height: 1.5;
-  margin-bottom: 25px;
-  font-weight: 500;
-}
-.promo-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.promo-btn-call {
-  background: #e63946;
-  color: white;
-  text-decoration: none;
-  padding: 14px;
-  border-radius: 12px;
-  font-weight: bold;
-  font-size: 18px;
-  transition: opacity 0.2s;
-}
-.promo-btn-close {
-  background: #f1f1f1;
-  color: #666;
-  border: none;
-  padding: 12px;
-  border-radius: 12px;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 16px;
-}
-.promo-btn-call:hover, .promo-btn-close:hover {
-  opacity: 0.9;
-}
-
 /* PRICES SECTION */
 .prices-section {
   padding: 60px 20px;
@@ -899,8 +814,6 @@ footer {
 
 <body>
 
-<div class="promo-banner">🔥 OFERTĂ LIMITATĂ: -20% până pe 10 Aprilie + încă -10% pentru comenzi peste 500 lei</div>
-
 <header>
   <div class="lang-switcher">
     <button onclick="changeLanguage('ro')"><img src="https://www.countryflags.com/wp-content/uploads/romania-flag-png-large.png" alt="Romanian Flag"></button>
@@ -915,9 +828,6 @@ footer {
 
 <div class="hero">
   <h1 data-translate="hero-title">Curățare Canapele, Saltele și Mochete în București</h1>
-  <p style="font-weight: bold; color: #7CFFB2; font-size: 20px; margin-bottom: 10px;">🔥 Reducere 20% până pe 10 Aprilie<br>+ 10% extra pentru comenzi peste 500 lei</p>
-  <p data-translate="hero-subtitle">Spălare profesională la domiciliu. Eliminăm petele și mirosurile rapid.</p>
-  <p style="font-weight: bold; color: #7CFFB2; font-size: 20px; margin-top: 10px;">🔥 Programări rapide • București & Ilfov • Sună acum pentru ofertă</p>
   <div class="hero-actions">
     <a href="tel:+40778735007" onclick="gtag('event', 'conversion', {'send_to': 'AW-17962070059/apel'});" data-translate="hero-call">📞 Sună acum: +40778735007</a>
     <a href="https://wa.me/40778735007" onclick="gtag('event', 'conversion', {'send_to': 'AW-17962070059/whatsapp'});" class="whatsapp icon-btn" data-translate="hero-whatsapp">
