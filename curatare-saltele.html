@@ -1,18 +1,188 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-<meta charset="UTF-8">
-<title>Curățare Saltele București</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curățare saltele București | SkyClean</title>
+  <meta name="description" content="Curățare profesională saltele, colțare, fotolii și scaune în București și Ilfov. Eliminăm petele și mirosurile rapid, la domiciliu.">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body style="font-family: Arial; padding:20px;">
+<body>
 
-<h1>Curățare saltele</h1>
+  <div class="topbar">
+    <a href="index.html">← Înapoi la homepage</a>
+    <div class="lang-switcher">
+      <button type="button"><img src="https://www.countryflags.com/wp-content/uploads/romania-flag-png-large.png" alt="RO"></button>
+      <button type="button"><img src="https://www.countryflags.com/wp-content/uploads/united-kingdom-flag-png-large.png" alt="EN"></button>
+    </div>
+  </div>
 
-<p>Eliminăm acarieni, pete și mirosuri.</p>
+  <header>
+    <img src="banner.png" alt="SkyClean Banner" class="banner-img">
+    <div class="banner-text">Curățare profesională saltele la domiciliu</div>
+    <img src="fara telefon logo.png" alt="SkyClean Logo" class="header-logo">
+  </header>
 
-<p>De la 100 lei</p>
+  <section class="service-hero">
+    <h1>Curățare profesională saltele</h1>
+    <p>București & Ilfov</p>
+    <p>Curățăm saltele, colțare, fotolii și scaune la domiciliu, cu echipamente profesionale și soluții sigure pentru materiale textile și piele.</p>
 
-<a href="tel:+40778735007">📞 Sună acum</a>
+    <div class="service-hero-actions">
+      <a href="tel:+40778735007" onclick="gtag('event', 'conversion', {'send_to': 'AW-17962070059/apel'});">📞 Sună acum: 0778 735 007</a>
+      <a href="https://wa.me/40778735007" class="whatsapp icon-btn" onclick="gtag('event', 'conversion', {'send_to': 'AW-17962070059/whatsapp'});">
+        <img src="assets/img/whatsapp.svg" alt="WhatsApp">
+        WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <section class="benefits-section">
+    <h2>De ce aleg clienții SkyClean</h2>
+    <div class="benefits-grid">
+      <div class="benefit-item">✔ Venim direct la domiciliu</div>
+      <div class="benefit-item">✔ Eliminăm pete și mirosuri</div>
+      <div class="benefit-item">✔ Curățare în profunzime</div>
+      <div class="benefit-item">✔ Programări rapide în București & Ilfov</div>
+    </div>
+  </section>
+
+  <section class="service-layout">
+    <div class="service-grid">
+      <div class="service-panel">
+        <h2>Ce curățăm</h2>
+        <ul class="service-list">
+          <li>✔ Saltele single (80-90 cm)</li>
+          <li>✔ Saltele duble (140-160 cm)</li>
+          <li>✔ Saltele King Size (180-200 cm)</li>
+          <li>✔ Saltele de copii</li>
+          <li>✔ Topper-e</li>
+          <li>✔ Curățare pe ambele fețe</li>
+        </ul>
+      </div>
+
+      <div class="service-panel">
+        <h2>Prețuri orientative</h2>
+        <ul class="service-price-list">
+          <li>Saltea single — de la 100 lei</li>
+          <li>Saltea dublă — de la 150 lei</li>
+          <li>Saltea king size — de la 200 lei</li>
+          <li>Topper — de la 80 lei</li>
+          <li>Pernă — de la 30 lei</li>
+        </ul>
+        <p class="service-note">Igienizare completă și eliminare acarieni.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials-section">
+    <h2>De ce merită</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <p class="testimonial-text">O saltea curată înseamnă un somn mai sănătos. Eliminăm acarienii, bacteriile și alergenii acumulați în timp.</p>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">Sistemul de injecție–extracție pătrunde adânc în fibre, scoțând murdăria și petele de transpirație.</p>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">Interveniv rapid la domiciliul tău în București și Ilfov, lăsând salteaua curată și igienizată.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="oferta" class="quote">
+    <h2>Cere ofertă rapidă sau sună acum</h2>
+    <p>Completează formularul în 30 secunde sau sună direct pentru programare rapidă.</p>
+
+    <form id="quoteForm">
+      <div class="grid">
+        <label>
+          Nume
+          <input type="text" name="name" autocomplete="name" required>
+        </label><br>
+
+        <label>
+          Telefon
+          <input type="tel" name="phone" inputmode="tel" autocomplete="tel" required>
+        </label><br>
+
+        <label>
+          Oraș / Zonă
+          <input type="text" name="area" placeholder="București, Ilfov, Otopeni..." required>
+        </label><br>
+
+        <label>
+          Serviciu
+          <select name="service" required>
+            <option value="">Alege serviciul</option>
+            <option>Curățare canapea / colțar</option>
+            <option selected>Curățare saltea</option>
+            <option>Curățare covor (la domiciliu)</option>
+            <option>Curățare mochetă</option>
+            <option>Scaune / fotolii</option>
+            <option>Altceva</option>
+          </select>
+        </label><br>
+
+        <label>
+          Câte bucăți?
+          <input type="number" name="qty" min="1" value="1" required>
+        </label><br>
+
+        <label>
+          Cât de urgent?
+          <select name="urgency" required>
+            <option>Azi</option>
+            <option>Mâine</option>
+            <option>Săptămâna asta</option>
+            <option>Nu e urgent</option>
+          </select>
+        </label><br>
+      </div>
+
+      <label>
+        Detalii (opțional)
+        <textarea name="details" rows="4" placeholder="Pete, mirosuri, dimensiune, etaj, acces..."></textarea>
+      </label><br>
+
+      <label class="check">
+        <input type="checkbox" name="consent" required>
+        Sunt de acord să fiu contactat(ă) pentru ofertă.
+      </label><br>
+
+      <p style="font-weight: bold; color: #7CFFB2; margin-bottom: 15px;">📞 Pentru răspuns mai rapid, sună direct la 0778 735 007</p>
+
+      <div class="actions">
+        <button type="submit">Trimite cererea pe WhatsApp</button>
+        <a class="btn secondary" href="tel:+40778735007" onclick="gtag('event', 'conversion', {'send_to': 'AW-17962070059/apel'});">Sună: 0778 735 007</a>
+      </div>
+
+      <p class="note">Tip: poți trimite și o poză pe WhatsApp după ce trimiți formularul.</p>
+    </form>
+  </section>
+
+  <footer>
+    <p>📞 +40778735007</p>
+    <div class="social-links">
+      <a href="https://m.facebook.com/profile.php?id=61587752910986" target="_blank" rel="noopener noreferrer" class="fb-button icon-btn">
+        <img src="assets/img/facebook.svg" alt="Facebook">
+        Facebook SkyClean
+      </a>
+      <a href="https://www.instagram.com/skycleanro/" target="_blank" rel="noopener noreferrer" class="btn ig icon-btn">
+        <img src="assets/img/instagram.png" alt="Instagram">
+        Instagram SkyClean
+      </a>
+      <div class="tiktok-wrap">
+        <a href="https://www.tiktok.com/@skycleanro" target="_blank" rel="noopener noreferrer" class="tt-button icon-btn">
+          <img src="assets/img/tiktok.svg" alt="TikTok">
+          TikTok SkyClean
+        </a>
+      </div>
+    </div>
+    <p>© SkyClean – Curățenie la nivel înalt</p>
+  </footer>
+
+  <a class="call" href="tel:+40778735007" onclick="gtag('event', 'conversion', {'send_to': 'AW-17962070059/apel'});">Sună acum</a>
 
 </body>
 </html>
