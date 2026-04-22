@@ -22,7 +22,7 @@ const translations = {
     "benefit4": "✔ Programări rapide în București & Ilfov",
 
     "section-what-clean": "Ce curățăm",
-    "section-prices": "Prețuri orientative",
+    "section-prices": "Prețuri clare și fixe",
     "section-worth": "De ce merită",
 
     "worth1-canapele": "Curățarea profesională ajută la eliminarea petelor, mirosurilor, bacteriilor, acarienilor și alergenilor din țesături.",
@@ -70,7 +70,7 @@ const translations = {
     "benefit4": "✔ Fast bookings in Bucharest & Ilfov",
 
     "section-what-clean": "What we clean",
-    "section-prices": "Estimated prices",
+    "section-prices": "Clear and fixed prices",
     "section-worth": "Why it is worth it",
 
     "worth1-canapele": "Professional cleaning helps remove stains, odors, bacteria, dust mites and allergens from fabrics.",
