@@ -1,69 +1,32 @@
+<?php
+declare(strict_types=1);
+require_once __DIR__ . '/../includes/functions.php';
+
+$page = [
+    'TITLE' => 'Servicii curățare canapele, saltele, covoare și mochete | SkyClean',
+    'DESCRIPTION' => 'Servicii profesionale de curățare canapele, saltele, covoare și mochete în București și Ilfov, cu prețuri clare și echipamente performante.',
+    'CANONICAL' => 'https://skyclean.ro/servicii/',
+    'HERO_IMAGE' => '/assets/images/hero-servicii.webp',
+    'ROOT' => '../',
+    'PAGE_EXT' => '.php',
+    'PAGE_NAME' => 'Servicii'
+];
+
+$navigation = $page + [
+    'NAV_HOME' => '',
+    'NAV_ABOUT' => '',
+    'NAV_SERVICES' => ' aria-current="page"',
+    'NAV_CONTACT' => ''
+];
+?>
 <!doctype html>
 <html lang="ro">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Servicii curățare canapele, saltele, covoare și mochete | SkyClean</title>
-  <meta name="description" content="Servicii profesionale de curățare canapele, saltele, covoare și mochete în București și Ilfov, cu prețuri clare și echipamente performante.">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <link rel="canonical" href="https://skyclean.ro/servicii/">
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-  <meta name="theme-color" content="#073b4c">
-  <meta property="og:locale" content="ro_RO">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="SkyClean">
-  <meta property="og:title" content="Servicii curățare canapele, saltele, covoare și mochete | SkyClean">
-  <meta property="og:description" content="Servicii profesionale de curățare canapele, saltele, covoare și mochete în București și Ilfov, cu prețuri clare și echipamente performante.">
-  <meta property="og:url" content="https://skyclean.ro/servicii/">
-  <meta property="og:image" content="https://skyclean.ro/assets/images/hero-servicii.webp">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Servicii curățare canapele, saltele, covoare și mochete | SkyClean">
-  <meta name="twitter:description" content="Servicii profesionale de curățare canapele, saltele, covoare și mochete în București și Ilfov, cu prețuri clare și echipamente performante.">
-  <meta name="twitter:image" content="https://skyclean.ro/assets/images/hero-servicii.webp">
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://skyclean.ro/#business",
-    "name": "SkyClean",
-    "url": "https://skyclean.ro/",
-    "telephone": "+40778735007",
-    "description": "Curățare profesională canapele, saltele, covoare și mochete în București și Ilfov.",
-    "image": "https://skyclean.ro/assets/images/hero-servicii.webp",
-    "areaServed": ["București", "Ilfov"],
-    "sameAs": [
-      "https://m.facebook.com/profile.php?id=61587752910986",
-      "https://www.instagram.com/skycleanro/",
-      "https://www.tiktok.com/@skycleanro"
-    ],
-    "priceRange": "100-500 RON",
-    "serviceType": ["Curățare canapele", "Curățare saltele", "Curățare covoare", "Curățare mochete"]
-  }
-  </script>
-
+<?php render_html(__DIR__ . '/../includes/head.html', $page); ?>
 </head>
 <body>
   <a class="skip-link" href="#continut">Sari la conținut</a>
-  <header class="site-header" data-header>
-    <div class="nav-shell">
-      <a class="brand" href="../index.html" aria-label="SkyClean - Acasă">
-        <span class="brand-mark" aria-hidden="true">S</span>
-        <span><strong>SkyClean</strong><small>Curățenie la nivel înalt</small></span>
-      </a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu" data-menu-toggle>
-        <span class="sr-only">Deschide meniul</span><i></i><i></i><i></i>
-      </button>
-      <nav id="main-menu" class="main-nav" aria-label="Navigație principală" data-menu>
-        <a href="../index.html">Acasă</a>
-        <a href="../despre-noi/index.html">Despre noi</a>
-        <a href="../servicii/index.html" aria-current="page">Servicii</a>
-        <a href="../contact/index.html">Contact</a>
-        <a class="nav-cta" href="tel:+40778735007">0778 735 007</a>
-      </nav>
-    </div>
-  </header>
-
+<?php render_html(__DIR__ . '/../includes/header.html', $navigation); ?>
   <main id="continut">
     <section class="page-hero"><img src="../assets/images/hero-servicii.webp" alt="Specialist SkyClean pregătind echipamentul pentru curățare profesională" width="1536" height="1024" fetchpriority="high"><div class="hero-shade"></div><div class="hero-content"><p class="eyebrow">Serviciile noastre</p><h1>Curățare în profunzime, direct la tine</h1><p>Intervenții rapide în București și Ilfov pentru mobilier tapițat, saltele, covoare și mochete.</p></div></section>
     <nav class="service-jump" aria-label="Servicii"><a href="#canapele">Canapele</a><a href="#saltele">Saltele</a><a href="#covoare">Covoare</a><a href="#mochete">Mochete</a><a href="#preturi">Prețuri</a></nav>
@@ -79,33 +42,7 @@
     <section class="section price-list" id="preturi"><div class="section-heading"><p class="eyebrow">Lista completă</p><h2>Prețuri clare și fixe</h2><p>Servicii profesionale de curățenie în București și împrejurimi.</p></div><div class="price-columns"><article><h3>Canapele, fotolii & scaune</h3><dl><div><dt>Canapea 2 locuri</dt><dd>200 RON</dd></div><div><dt>Canapea 3 locuri</dt><dd>250 RON</dd></div><div><dt>Canapea 4 locuri</dt><dd>300 RON</dd></div><div><dt>Fotoliu</dt><dd>80 RON</dd></div><div><dt>Scaun tapițat</dt><dd>40 RON</dd></div><div><dt>Canapea piele 2 locuri</dt><dd>250 RON</dd></div><div><dt>Canapea piele 3 locuri</dt><dd>300 RON</dd></div><div><dt>Fotoliu piele</dt><dd>120 RON</dd></div></dl><p>Curățare completă, inclusiv spatele mobilierului. Îndepărtare pete persistente, fără afectarea culorilor.</p></article><article><h3>Saltele</h3><dl><div><dt>Saltea single</dt><dd>100 RON</dd></div><div><dt>Saltea dublă</dt><dd>150 RON</dd></div><div><dt>Saltea King Size</dt><dd>200 RON</dd></div><div><dt>Topper</dt><dd>80 RON</dd></div><div><dt>Pernă</dt><dd>30 RON</dd></div></dl><p>Curățare în profunzime, eliminare acarieni și mirosuri neplăcute. Curățare pe ambele fețe, unde este posibil.</p></article><article><h3>Covoare & mochete</h3><dl><div><dt>Covoare la domiciliu</dt><dd>15 RON/mp</dd></div><div><dt>Mochete</dt><dd>15 RON/mp</dd></div></dl><p>Ideal pentru birouri, hoteluri și spații comerciale. Preț negociabil pentru suprafețe mari.</p></article></div><aside class="price-notes"><h3>Mențiuni importante</h3><ul class="check-list"><li>Deplasare în București/Ilfov pentru comenzi mai mici de 200 RON: 50 RON</li><li>Deplasare gratuită pentru comenzi mai mari de 200 RON</li><li>Reducere de 10% pentru comenzile care depășesc 500 RON</li><li>Prețurile nu variază în funcție de gradul de murdărie</li></ul></aside></section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-grid">
-      <div>
-        <a class="brand brand--footer" href="../index.html" aria-label="SkyClean - Acasă">
-          <span class="brand-mark" aria-hidden="true">S</span>
-          <span><strong>SkyClean</strong><small>Curățenie la nivel înalt</small></span>
-        </a>
-        <p>Curățare profesională la domiciliu în București și Ilfov.</p>
-      </div>
-      <div>
-        <h2>Pagini</h2>
-        <a href="../index.html">Acasă</a><a href="../despre-noi/index.html">Despre noi</a><a href="../servicii/index.html">Servicii</a><a href="../contact/index.html">Contact</a>
-      </div>
-      <div>
-        <h2>Contact rapid</h2>
-        <a href="tel:+40778735007">+40 778 735 007</a>
-        <a href="https://wa.me/40778735007">WhatsApp</a>
-        <div class="social-links">
-          <a href="https://m.facebook.com/profile.php?id=61587752910986" rel="noopener" target="_blank">Facebook</a>
-          <a href="https://www.instagram.com/skycleanro/" rel="noopener" target="_blank">Instagram</a>
-          <a href="https://www.tiktok.com/@skycleanro" rel="noopener" target="_blank">TikTok</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">© <span data-year></span> SkyClean – Curățenie la nivel înalt</div>
-  </footer>
-
+<?php render_html(__DIR__ . '/../includes/footer.html', $page); ?>
   <a class="floating-call" href="tel:+40778735007" aria-label="Sună acum la SkyClean">Sună acum</a>
   <script src="../assets/js/site.js" defer></script>
 </body>
