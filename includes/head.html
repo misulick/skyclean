@@ -38,3 +38,30 @@
     "serviceType": ["Curățare canapele", "Curățare saltele", "Curățare covoare", "Curățare mochete"]
   }
   </script>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17962070059"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-17962070059');
+</script>
+<!-- Event snippet for Clic pentru apelare conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17962070059/ZZNnCLm3m4IdEKvg_fRC',
+      'value': 1.0,
+      'currency': 'RON',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
